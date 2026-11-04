@@ -6,10 +6,7 @@
   <title>سازمان دانش‌آموزی استان همدان</title>
   <meta name="description" content="از کره زمین تا ورودی آموزشگاه، از پله‌ها تا سالن اصلی؛ با هر اسکرول یک قدم جلوتر بروید.">
   <meta name="theme-color" content="#0B0F0D">
-
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Lalezar&family=Vazirmatn:wght@400;500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet"href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -29,6 +26,8 @@
       </span>
     </a>
 
+      <a class="login-button" href="#login"><i class="fa-regular fa-user"></i><span>ورود / ثبت‌نام</span></a>
+
     <button class="burger" id="burger" type="button" aria-expanded="false" aria-controls="mainNav">
       <span class="burger__label">منو</span>
       <span class="burger__bars" aria-hidden="true"><i></i><i></i></span>
@@ -44,6 +43,7 @@
         <li><a href="#contact">ارتباط با ما</a></li>
       </ul>
     </nav>
+
   </header>
 
   <main>
@@ -82,15 +82,989 @@
       </div>
     </section>
 
-    <!-- Short landing strip after the hero (placeholder for next sections) -->
-    <section class="after" id="courses">
-      <p>بخش‌های بعدی صفحه (دوره‌ها، مربیان، اخبار) اینجا ادامه پیدا می‌کنند.</p>
-      <a class="btn btn--primary" href="#hero" id="backTop">بازگشت به ورودی</a>
+
+
+    <section class="categories-section" id="categories">
+      <div class="categories-container">
+
+        <div class="section-heading">
+          <div class="heading-content">
+            <span class="section-kicker">
+             مسیر یادگیری خودت را انتخاب کن
+            </span>
+            <h2>دسته‌بندی دوره‌ها</h2>
+            <p>از میان مسیرهای متنوع آموزشی، علاقه خودت را دنبال کن.</p>
+          </div>
+
+          <a href="#courses" class="view-all">
+           مشاهده همه دوره‌ها
+            <i class="fa-solid fa-arrow-left"></i>
+          </a>
+        </div>
+
+        <div class="category-grid">
+
+          <a href="#courses" class="category-card">
+            <span class="category-icon">
+              <i class="fa-solid fa-calculator"></i>
+            </span>
+            <h3>ریاضیات</h3>
+            <p>منطق، دقت و مهارت حل مسئله</p>
+            <span class="card-arrow">
+              <i class="fa-solid fa-arrow-left"></i>
+            </span>
+          </a>
+
+          <a href="#courses" class="category-card">
+            <span class="category-icon">
+              <i class="fa-solid fa-gear"></i>
+            </span>
+            <h3>مهارت‌های زندگی</h3>
+            <p>مهارت‌هایی برای زندگی بهتر</p>
+            <span class="card-arrow">
+              <i class="fa-solid fa-arrow-left"></i>
+            </span>
+          </a>
+
+          <a href="#courses" class="category-card">
+            <span class="category-icon">
+              <i class="fa-solid fa-book-open"></i>
+            </span>
+            <h3>زبان‌های خارجی</h3>
+            <p>ارتباط مؤثر با جهان</p>
+            <span class="card-arrow">
+              <i class="fa-solid fa-arrow-left"></i>
+            </span>
+          </a>
+
+          <a href="#courses" class="category-card">
+            <span class="category-icon">
+              <i class="fa-solid fa-flask"></i>
+            </span>
+            <h3>علوم و پژوهش</h3>
+            <p>کشف دنیای علم و دانش</p>
+            <span class="card-arrow">
+              <i class="fa-solid fa-arrow-left"></i>
+            </span>
+          </a>
+
+          <a href="#courses" class="category-card">
+            <span class="category-icon">
+              <i class="fa-solid fa-code"></i>
+            </span>
+            <h3>فناوری و برنامه‌نویسی</h3>
+            <p>کدنویسی و هوش مصنوعی</p>
+            <span class="card-arrow">
+              <i class="fa-solid fa-arrow-left"></i>
+            </span>
+          </a>
+
+          <a href="#courses" class="category-card">
+            <span class="category-icon">
+              <i class="fa-solid fa-palette"></i>
+            </span>
+            <h3>هنر و خلاقیت</h3>
+            <p>تجربه هنر و خلق ایده‌های نو</p>
+            <span class="card-arrow">
+              <i class="fa-solid fa-arrow-left"></i>
+            </span>
+          </a>
+
+        </div>
+      </div>
     </section>
+    <!-- =========================================
+     LEARNING HUB / COURSES SECTION
+========================================= -->
+
+    <section class="learning-hub" id="courses">
+
+        <div class="learning-container">
+
+        <!-- Section Heading -->
+            <div class="learning-heading">
+
+                <div class="learning-heading__content">
+
+                    <span class="learning-heading__eyebrow">
+                       مسیر رشد و یادگیری
+                    </span>
+
+                    <h2 class="learning-heading__title">
+                       دوره‌های آموزشی
+                    </h2>
+
+                    <p class="learning-heading__description">
+                       فضایی برای یادگیری، تجربه و پرورش استعدادهای شما
+                    </p>
+
+                </div>
+
+                <a href="#courses" class="learning-heading__link">
+                   مشاهده دوره‌ها
+                    <span aria-hidden="true">←</span>
+                </a>
+
+            </div>
+
+
+        <!-- Courses Panels -->
+            <div class="courses-grid">
+
+
+            <!-- =================================
+                 ONLINE COURSES
+            ================================== -->
+
+            <section class="course-panel" aria-label="دوره‌های آنلاین">
+
+                <div class="course-panel__heading">
+
+                    <div class="course-panel__title-group">
+
+                        <span class="course-panel__icon">
+                            <svg viewBox="0 0 24 24" aria-hidden="true">
+                                <rect x="3" y="4" width="18" height="13" rx="2"></rect>
+                                <path d="M8 21h8M12 17v4"></path>
+                            </svg>
+                        </span>
+
+                        <div>
+                            <h3>دوره‌های آنلاین</h3>
+
+                            <p>
+                                آموزش در هر زمان و هر مکان
+                            </p>
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <div class="course-panel__content">
+
+                    <div class="course-panel__topbar">
+
+                        <span>دوره‌های قابل ثبت‌نام</span>
+
+                        <span class="course-panel__count">
+                            ۰۶ دوره
+                        </span>
+
+                    </div>
+
+
+                    <div class="course-carousel" data-carousel>
+
+                        <div class="course-track">
+
+
+                            <!-- Online Slide 1 -->
+                            <div class="course-slide">
+
+                                <article class="course-card">
+
+                                    <div class="course-card__image course-card__image--blue">
+
+                                        <span class="course-card__category">
+                                            آموزشی
+                                        </span>
+
+                                        <svg viewBox="0 0 120 80" aria-hidden="true">
+                                            <path d="M18 65 43 29 64 55 79 39 105 65Z"></path>
+                                            <circle cx="83" cy="20" r="8"></circle>
+                                        </svg>
+
+                                    </div>
+
+                                    <div class="course-card__body">
+
+                                        <h4>مفاهیم پایه گرافیک</h4>
+
+                                        <p>
+                                            آشنایی با اصول طراحی و ترکیب رنگ
+                                        </p>
+
+                                        <div class="course-card__meta">
+                                            <span>سطح مقدماتی</span>
+                                            <span>●</span>
+                                        </div>
+
+                                        <button
+                                            class="course-card__button"
+                                            type="button"
+                                            data-course-title="مفاهیم پایه گرافیک"
+                                            data-course-description="در این دوره با اصول طراحی گرافیک، ترکیب رنگ و مفاهیم اولیه آشنا می‌شوید."
+                                        >
+                                            مشاهده جزئیات
+                                            <span>←</span>
+                                        </button>
+
+                                    </div>
+
+                                </article>
+
+
+                                <article class="course-card">
+
+                                    <div class="course-card__image course-card__image--purple">
+
+                                        <span class="course-card__category">
+                                            آموزشی
+                                        </span>
+
+                                        <svg viewBox="0 0 120 80" aria-hidden="true">
+                                            <path d="M18 65 43 29 64 55 79 39 105 65Z"></path>
+                                            <circle cx="83" cy="20" r="8"></circle>
+                                        </svg>
+
+                                    </div>
+
+                                    <div class="course-card__body">
+
+                                        <h4>هوش مصنوعی</h4>
+
+                                        <p>
+                                            آشنایی با دنیای هوش مصنوعی و کاربردهای آن
+                                        </p>
+
+                                        <div class="course-card__meta">
+                                            <span>سطح مقدماتی</span>
+                                            <span>●</span>
+                                        </div>
+
+                                        <button
+                                            class="course-card__button"
+                                            type="button"
+                                            data-course-title="هوش مصنوعی"
+                                            data-course-description="در این دوره با مفاهیم اولیه هوش مصنوعی و کاربردهای آن در زندگی روزمره آشنا می‌شوید."
+                                        >
+                                            مشاهده جزئیات
+                                            <span>←</span>
+                                        </button>
+
+                                    </div>
+
+                                </article>
+
+
+                                <article class="course-card">
+
+                                    <div class="course-card__image course-card__image--orange">
+
+                                        <span class="course-card__category">
+                                            آموزشی
+                                        </span>
+
+                                        <svg viewBox="0 0 120 80" aria-hidden="true">
+                                            <path d="M18 65 43 29 64 55 79 39 105 65Z"></path>
+                                            <circle cx="83" cy="20" r="8"></circle>
+                                        </svg>
+
+                                    </div>
+
+                                    <div class="course-card__body">
+
+                                        <h4>برنامه‌نویسی پایتون</h4>
+
+                                        <p>
+                                            شروع برنامه‌نویسی با زبان پایتون
+                                        </p>
+
+                                        <div class="course-card__meta">
+                                            <span>سطح مقدماتی</span>
+                                            <span>●</span>
+                                        </div>
+
+                                        <button
+                                            class="course-card__button"
+                                            type="button"
+                                            data-course-title="برنامه‌نویسی پایتون"
+                                            data-course-description="در این دوره اصول برنامه‌نویسی و ساخت برنامه‌های ساده با زبان پایتون را یاد می‌گیرید."
+                                        >
+                                            مشاهده جزئیات
+                                            <span>←</span>
+                                        </button>
+
+                                    </div>
+
+                                </article>
+
+                            </div>
+
+
+                            <!-- Online Slide 2 -->
+                            <div class="course-slide">
+
+                                <article class="course-card">
+
+                                    <div class="course-card__image course-card__image--green">
+
+                                        <span class="course-card__category">
+                                            آموزشی
+                                        </span>
+
+                                        <svg viewBox="0 0 120 80" aria-hidden="true">
+                                            <path d="M18 65 43 29 64 55 79 39 105 65Z"></path>
+                                            <circle cx="83" cy="20" r="8"></circle>
+                                        </svg>
+
+                                    </div>
+
+                                    <div class="course-card__body">
+
+                                        <h4>مهارت‌های ارتباطی</h4>
+
+                                        <p>
+                                            تقویت مهارت گفت‌وگو و تعامل اجتماعی
+                                        </p>
+
+                                        <div class="course-card__meta">
+                                            <span>سطح عمومی</span>
+                                            <span>●</span>
+                                        </div>
+
+                                        <button
+                                            class="course-card__button"
+                                            type="button"
+                                            data-course-title="مهارت‌های ارتباطی"
+                                            data-course-description="این دوره به تقویت گفت‌وگو، همکاری و تعامل مؤثر با دیگران کمک می‌کند."
+                                        >
+                                            مشاهده جزئیات
+                                            <span>←</span>
+                                        </button>
+
+                                    </div>
+
+                                </article>
+
+
+                                <article class="course-card">
+
+                                    <div class="course-card__image course-card__image--pink">
+
+                                        <span class="course-card__category">
+                                            آموزشی
+                                        </span>
+
+                                        <svg viewBox="0 0 120 80" aria-hidden="true">
+                                            <path d="M18 65 43 29 64 55 79 39 105 65Z"></path>
+                                            <circle cx="83" cy="20" r="8"></circle>
+                                        </svg>
+
+                                    </div>
+
+                                    <div class="course-card__body">
+
+                                        <h4>تولید محتوای دیجیتال</h4>
+
+                                        <p>
+                                            آشنایی با اصول تولید محتوای حرفه‌ای
+                                        </p>
+
+                                        <div class="course-card__meta">
+                                            <span>سطح مقدماتی</span>
+                                            <span>●</span>
+                                        </div>
+
+                                        <button
+                                            class="course-card__button"
+                                            type="button"
+                                            data-course-title="تولید محتوای دیجیتال"
+                                            data-course-description="در این دوره با روش‌های تولید و مدیریت محتوای دیجیتال آشنا می‌شوید."
+                                        >
+                                            مشاهده جزئیات
+                                            <span>←</span>
+                                        </button>
+
+                                    </div>
+
+                                </article>
+
+
+                                <article class="course-card">
+
+                                    <div class="course-card__image course-card__image--gold">
+
+                                        <span class="course-card__category">
+                                            آموزشی
+                                        </span>
+
+                                        <svg viewBox="0 0 120 80" aria-hidden="true">
+                                            <path d="M18 65 43 29 64 55 79 39 105 65Z"></path>
+                                            <circle cx="83" cy="20" r="8"></circle>
+                                        </svg>
+
+                                    </div>
+
+                                    <div class="course-card__body">
+
+                                        <h4>زبان انگلیسی</h4>
+
+                                        <p>
+                                            تقویت مهارت‌های پایه زبان انگلیسی
+                                        </p>
+
+                                        <div class="course-card__meta">
+                                            <span>سطح عمومی</span>
+                                            <span>●</span>
+                                        </div>
+
+                                        <button
+                                            class="course-card__button"
+                                            type="button"
+                                            data-course-title="زبان انگلیسی"
+                                            data-course-description="در این دوره مهارت‌های اولیه خواندن، نوشتن و مکالمه زبان انگلیسی را تمرین می‌کنید."
+                                        >
+                                            مشاهده جزئیات
+                                            <span>←</span>
+                                        </button>
+
+                                    </div>
+
+                                </article>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="course-panel__footer">
+
+                        <div class="carousel-dots">
+
+                            <button class="carousel-dot is-active" type="button" aria-label="صفحه اول" aria-current="true"></button>
+
+                            <button class="carousel-dot" type="button" aria-label="صفحه دوم"></button>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <div class="course-panel__controls">
+
+                    <button type="button" data-carousel-prev aria-label="دوره‌های قبلی">
+                        ‹
+                    </button>
+
+                    <button type="button" data-carousel-next aria-label="دوره‌های بعدی">
+                        ›
+                    </button>
+
+                </div>
+
+            </section>
+
+
+
+            <!-- =================================
+                 IN-PERSON COURSES
+            ================================== -->
+
+            <section class="course-panel" aria-label="دوره‌های حضوری">
+
+                <div class="course-panel__heading">
+
+                    <div class="course-panel__title-group">
+
+                        <span class="course-panel__icon">
+                            <svg viewBox="0 0 24 24" aria-hidden="true">
+                                <path d="M12 3 3 8v2h18V8l-9-5Z"></path>
+                                <path d="M5 10v8M10 10v8M14 10v8M19 10v8M3 20h18"></path>
+                            </svg>
+                        </span>
+
+                        <div>
+                            <h3>دوره‌های حضوری</h3>
+
+                            <p>
+                                یادگیری در کنار دوستان و مربیان
+                            </p>
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <div class="course-panel__content">
+
+                    <div class="course-panel__topbar">
+
+                        <span>دوره‌های قابل ثبت‌نام</span>
+
+                        <span class="course-panel__count">
+                            ۰۶ دوره
+                        </span>
+
+                    </div>
+
+
+                    <div class="course-carousel" data-carousel>
+
+                        <div class="course-track">
+
+
+                            <!-- In-person Slide 1 -->
+                            <div class="course-slide">
+
+                                <article class="course-card">
+
+                                    <div class="course-card__image course-card__image--blue">
+
+                                        <span class="course-card__category">
+                                            حضوری
+                                        </span>
+
+                                        <svg viewBox="0 0 120 80" aria-hidden="true">
+                                            <path d="M18 65 43 29 64 55 79 39 105 65Z"></path>
+                                            <circle cx="83" cy="20" r="8"></circle>
+                                        </svg>
+
+                                    </div>
+
+                                    <div class="course-card__body">
+
+                                        <h4>طراحی و گرافیک</h4>
+
+                                        <p>
+                                            آموزش عملی طراحی و خلاقیت بصری
+                                        </p>
+
+                                        <div class="course-card__meta">
+                                            <span>سطح مقدماتی</span>
+                                            <span>●</span>
+                                        </div>
+
+                                        <button
+                                            class="course-card__button"
+                                            type="button"
+                                            data-course-title="طراحی و گرافیک"
+                                            data-course-description="در این دوره به‌صورت عملی با اصول طراحی و خلاقیت بصری آشنا می‌شوید."
+                                        >
+                                            مشاهده جزئیات
+                                            <span>←</span>
+                                        </button>
+
+                                    </div>
+
+                                </article>
+
+
+                                <article class="course-card">
+
+                                    <div class="course-card__image course-card__image--purple">
+
+                                        <span class="course-card__category">
+                                            حضوری
+                                        </span>
+
+                                        <svg viewBox="0 0 120 80" aria-hidden="true">
+                                            <path d="M18 65 43 29 64 55 79 39 105 65Z"></path>
+                                            <circle cx="83" cy="20" r="8"></circle>
+                                        </svg>
+
+                                    </div>
+
+                                    <div class="course-card__body">
+
+                                        <h4>زبان انگلیسی</h4>
+
+                                        <p>
+                                            تمرین مکالمه با مربیان آموزشی
+                                        </p>
+
+                                        <div class="course-card__meta">
+                                            <span>سطح عمومی</span>
+                                            <span>●</span>
+                                        </div>
+
+                                        <button
+                                            class="course-card__button"
+                                            type="button"
+                                            data-course-title="زبان انگلیسی"
+                                            data-course-description="تمرین مکالمه و تقویت مهارت‌های زبان انگلیسی در محیط آموزشی."
+                                        >
+                                            مشاهده جزئیات
+                                            <span>←</span>
+                                        </button>
+
+                                    </div>
+
+                                </article>
+
+
+                                <article class="course-card">
+
+                                    <div class="course-card__image course-card__image--orange">
+
+                                        <span class="course-card__category">
+                                            حضوری
+                                        </span>
+
+                                        <svg viewBox="0 0 120 80" aria-hidden="true">
+                                            <path d="M18 65 43 29 64 55 79 39 105 65Z"></path>
+                                            <circle cx="83" cy="20" r="8"></circle>
+                                        </svg>
+
+                                    </div>
+
+                                    <div class="course-card__body">
+
+                                        <h4>مهارت‌های هنری</h4>
+
+                                        <p>
+                                            پرورش خلاقیت و استعدادهای هنری
+                                        </p>
+
+                                        <div class="course-card__meta">
+                                            <span>سطح مقدماتی</span>
+                                            <span>●</span>
+                                        </div>
+
+                                        <button
+                                            class="course-card__button"
+                                            type="button"
+                                            data-course-title="مهارت‌های هنری"
+                                            data-course-description="در این دوره فرصت تجربه و تقویت مهارت‌های هنری و خلاقانه را خواهید داشت."
+                                        >
+                                            مشاهده جزئیات
+                                            <span>←</span>
+                                        </button>
+
+                                    </div>
+
+                                </article>
+
+                            </div>
+
+
+                            <!-- In-person Slide 2 -->
+                            <div class="course-slide">
+
+                                <article class="course-card">
+
+                                    <div class="course-card__image course-card__image--green">
+
+                                        <span class="course-card__category">
+                                            حضوری
+                                        </span>
+
+                                        <svg viewBox="0 0 120 80" aria-hidden="true">
+                                            <path d="M18 65 43 29 64 55 79 39 105 65Z"></path>
+                                            <circle cx="83" cy="20" r="8"></circle>
+                                        </svg>
+
+                                    </div>
+
+                                    <div class="course-card__body">
+
+                                        <h4>فن بیان و سخنوری</h4>
+
+                                        <p>
+                                            افزایش اعتمادبه‌نفس در صحبت کردن
+                                        </p>
+
+                                        <div class="course-card__meta">
+                                            <span>سطح عمومی</span>
+                                            <span>●</span>
+                                        </div>
+
+                                        <button
+                                            class="course-card__button"
+                                            type="button"
+                                            data-course-title="فن بیان و سخنوری"
+                                            data-course-description="تمرین سخنرانی، فن بیان و افزایش اعتمادبه‌نفس در جمع."
+                                        >
+                                            مشاهده جزئیات
+                                            <span>←</span>
+                                        </button>
+
+                                    </div>
+
+                                </article>
+
+
+                                <article class="course-card">
+
+                                    <div class="course-card__image course-card__image--pink">
+
+                                        <span class="course-card__category">
+                                            حضوری
+                                        </span>
+
+                                        <svg viewBox="0 0 120 80" aria-hidden="true">
+                                            <path d="M18 65 43 29 64 55 79 39 105 65Z"></path>
+                                            <circle cx="83" cy="20" r="8"></circle>
+                                        </svg>
+
+                                    </div>
+
+                                    <div class="course-card__body">
+
+                                        <h4>کارگاه رباتیک</h4>
+
+                                        <p>
+                                            آشنایی عملی با ساخت ربات
+                                        </p>
+
+                                        <div class="course-card__meta">
+                                            <span>سطح مقدماتی</span>
+                                            <span>●</span>
+                                        </div>
+
+                                        <button
+                                            class="course-card__button"
+                                            type="button"
+                                            data-course-title="کارگاه رباتیک"
+                                            data-course-description="در این کارگاه با مفاهیم اولیه رباتیک و ساخت پروژه‌های ساده آشنا می‌شوید."
+                                        >
+                                            مشاهده جزئیات
+                                            <span>←</span>
+                                        </button>
+
+                                    </div>
+
+                                </article>
+
+
+                                <article class="course-card">
+
+                                    <div class="course-card__image course-card__image--gold">
+
+                                        <span class="course-card__category">
+                                            حضوری
+                                        </span>
+
+                                        <svg viewBox="0 0 120 80" aria-hidden="true">
+                                            <path d="M18 65 43 29 64 55 79 39 105 65Z"></path>
+                                            <circle cx="83" cy="20" r="8"></circle>
+                                        </svg>
+
+                                    </div>
+
+                                    <div class="course-card__body">
+
+                                        <h4>مهارت‌های زندگی</h4>
+
+                                        <p>
+                                            آموزش مهارت‌های فردی و اجتماعی
+                                        </p>
+
+                                        <div class="course-card__meta">
+                                            <span>سطح عمومی</span>
+                                            <span>●</span>
+                                        </div>
+
+                                        <button
+                                            class="course-card__button"
+                                            type="button"
+                                            data-course-title="مهارت‌های زندگی"
+                                            data-course-description="آشنایی با مهارت‌های فردی، تصمیم‌گیری و ارتباط مؤثر در زندگی روزمره."
+                                        >
+                                            مشاهده جزئیات
+                                            <span>←</span>
+                                        </button>
+
+                                    </div>
+
+                                </article>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="course-panel__footer">
+
+                        <div class="carousel-dots">
+
+                            <button class="carousel-dot is-active" type="button" aria-label="صفحه اول" aria-current="true"></button>
+
+                            <button class="carousel-dot" type="button" aria-label="صفحه دوم"></button>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <div class="course-panel__controls">
+
+                    <button type="button" data-carousel-prev aria-label="دوره‌های قبلی">
+                        ‹
+                    </button>
+
+                    <button type="button" data-carousel-next aria-label="دوره‌های بعدی">
+                        ›
+                    </button>
+
+                </div>
+
+            </section>
+
+        </div>
+
+
+
+        <!-- =================================
+             RESERVATION BANNERS
+        ================================== -->
+
+        <div class="reservation-grid">
+
+
+            <!-- Meeting Hall -->
+            <article class="reservation-card reservation-card--meeting">
+
+                <div class="reservation-card__icon">
+
+                    <svg viewBox="0 0 24 24" aria-hidden="true">
+                        <circle cx="9" cy="8" r="3"></circle>
+                        <circle cx="17" cy="9" r="2.5"></circle>
+                        <path d="M3 20v-2a6 6 0 0 1 12 0v2"></path>
+                        <path d="M15 15a5 5 0 0 1 6 5"></path>
+                    </svg>
+
+                </div>
+
+                <div class="reservation-card__content">
+
+                    <h3>رزرو سالن اجتماعات</h3>
+
+                    <p>
+                        فضایی مناسب برای برگزاری همایش‌ها، نشست‌ها و مراسم آموزشی
+                    </p>
+
+                </div>
+
+                <button
+                    class="reservation-card__button"
+                    type="button"
+                    data-reservation="سالن اجتماعات"
+                    aria-label="درخواست رزرو سالن اجتماعات"
+                >
+                    ←
+                </button>
+
+            </article>
+
+
+
+            <!-- Conference Hall -->
+            <article class="reservation-card reservation-card--conference">
+
+                <div class="reservation-card__icon">
+
+                    <svg viewBox="0 0 24 24" aria-hidden="true">
+                        <path d="M4 5h16v5H4z"></path>
+                        <path d="M7 10v10M17 10v10M4 20h16"></path>
+                        <path d="M9 5V2h6v3"></path>
+                    </svg>
+
+                </div>
+
+                <div class="reservation-card__content">
+
+                    <h3>رزرو سالن کنفرانس</h3>
+
+                    <p>
+                        رزرو سالن‌های تخصصی جهت برگزاری جلسات و برنامه‌های سازمانی
+                    </p>
+
+                </div>
+
+                <button
+                    class="reservation-card__button"
+                    type="button"
+                    data-reservation="سالن کنفرانس"
+                    aria-label="درخواست رزرو سالن کنفرانس"
+                >
+                    ←
+                </button>
+
+            </article>
+
+        </div>
+
+    </div>
+
+</section>
+<section class="after" id="courses">
+    <a class="btn btn--primary" href="#hero" id="backTop">بازگشت به ورودی</a>
+</section>
+
+
+
+<!-- =========================================
+     COURSE DETAILS DIALOG
+========================================= -->
+
+<dialog class="course-dialog" id="courseDialog">
+
+    <div class="course-dialog__content">
+
+        <button
+            class="course-dialog__close"
+            type="button"
+            aria-label="بستن پنجره"
+            data-dialog-close
+        >
+            ×
+        </button>
+
+        <span class="course-dialog__eyebrow">
+            اطلاعات دوره آموزشی
+        </span>
+
+        <h2 id="dialogCourseTitle">
+            عنوان دوره
+        </h2>
+
+        <p id="dialogCourseDescription">
+            توضیحات دوره در این قسمت نمایش داده می‌شود.
+        </p>
+
+        <button
+            class="course-dialog__action"
+            type="button"
+            data-dialog-close
+        >
+            بستن پنجره
+        </button>
+
+    </div>
+
+</dialog>
+
+
+<!-- Notification -->
+<div
+    class="learning-toast"
+    id="learningToast"
+    role="status"
+    aria-live="polite"
+></div>
+
+
+
+ <!-- Learning Hub -->
+<script src="js/courses.js"></script>
+
   </main>
 
   <script src="js/gsap.min.js"></script>
   <script src="js/ScrollTrigger.min.js"></script>
   <script src="main.js"></script>
+  <script src="/js/Cources.js"></script>
 </body>
 </html>
