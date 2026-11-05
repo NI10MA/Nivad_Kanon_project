@@ -1,239 +1,413 @@
 
-/* =====================================================
+/* ==========================================
    LEARNING HUB
-   Course Carousel + Course Details + Reservations
-   ===================================================== */
+   COURSE DATA + CAROUSEL + DETAILS
+========================================== */
 
 (() => {
 
     "use strict";
 
 
-    /* =================================================
-       CAROUSEL
-       ================================================= */
+    /* ======================================
+       COURSE DATA
+    ====================================== */
 
-    const carousels = document.querySelectorAll("[data-carousel]");
+    const courses = [
 
+        {
+            title: "قرآن",
+            description: "آموزش روخوانی، روان‌خوانی و آشنایی با مفاهیم قرآنی.",
+            level: "سطح مقدماتی",
+            color: "blue"
+        },
 
-    carousels.forEach((carousel) => {
+        {
+            title: "مهارت‌های زندگی",
+            description: "تقویت مهارت‌های فردی، اجتماعی و تصمیم‌گیری.",
+            level: "سطح عمومی",
+            color: "purple"
+        },
 
-        const panel = carousel.closest(".course-panel");
+        {
+            title: "فن بیان و سخنوری",
+            description: "افزایش اعتمادبه‌نفس و توانایی صحبت در جمع.",
+            level: "سطح عمومی",
+            color: "orange"
+        },
 
-        const track = carousel.querySelector(".course-track");
+        {
+            title: "تئاتر و بازیگری",
+            description: "آشنایی با بازیگری، نمایش و پرورش خلاقیت.",
+            level: "سطح مقدماتی",
+            color: "green"
+        },
 
-        const slides = [...track.children];
+        {
+            title: "هوش مصنوعی دختران",
+            description: "آشنایی با هوش مصنوعی و کاربردهای خلاقانه آن.",
+            level: "سطح مقدماتی",
+            color: "pink"
+        },
 
-        const previousButton = panel.querySelector("[data-carousel-prev]");
+        {
+            title: "هوش مصنوعی پسران",
+            description: "یادگیری مفاهیم و ابزارهای هوش مصنوعی.",
+            level: "سطح مقدماتی",
+            color: "gold"
+        },
 
-        const nextButton = panel.querySelector("[data-carousel-next]");
+        {
+            title: "نقاشی",
+            description: "آموزش تکنیک‌های نقاشی و تقویت خلاقیت هنری.",
+            level: "سطح مقدماتی",
+            color: "orange"
+        },
 
-        const dots = [...panel.querySelectorAll(".carousel-dot")];
+        {
+            title: "مهارت‌های کامپیوتری",
+            description: "آشنایی با کامپیوتر، نرم‌افزارها و مهارت‌های دیجیتال.",
+            level: "سطح مقدماتی",
+            color: "blue"
+        },
 
-        let currentIndex = 0;
+        {
+            title: "خوشنویسی",
+            description: "آموزش اصول نوشتار زیبا و هنر خوشنویسی.",
+            level: "سطح مقدماتی",
+            color: "purple"
+        },
 
-        const totalSlides = slides.length;
+        {
+            title: "زبان مبتدی",
+            description: "آشنایی با واژگان و مکالمات پایه زبان.",
+            level: "سطح مقدماتی",
+            color: "green"
+        },
 
+        {
+            title: "موسیقی",
+            description: "آشنایی با مبانی موسیقی، ریتم و نواختن.",
+            level: "سطح مقدماتی",
+            color: "pink"
+        },
 
-        /* ---------- Update Carousel ---------- */
+        {
+            title: "ریاضیات",
+            description: "تقویت مهارت حل مسئله و تفکر منطقی.",
+            level: "سطح عمومی",
+            color: "gold"
+        },
 
-        function updateCarousel() {
+        {
+            title: "منبت‌کاری",
+            description: "آشنایی با هنر منبت و تکنیک‌های کار با چوب.",
+            level: "سطح مقدماتی",
+            color: "orange"
+        },
 
-            const offset = currentIndex * 100;
-
-            track.style.transform = `translateX(${offset}%)`;
-
-
-            dots.forEach((dot, index) => {
-
-                const isActive = index === currentIndex;
-
-                dot.classList.toggle("is-active", isActive);
-
-                if (isActive) {
-
-                    dot.setAttribute("aria-current", "true");
-
-                } else {
-
-                    dot.removeAttribute("aria-current");
-
-                }
-
-            });
-
+        {
+            title: "علوم آزمایشگاهی",
+            description: "آشنایی عملی با آزمایش‌های علمی و مشاهده پدیده‌ها.",
+            level: "سطح مقدماتی",
+            color: "blue"
         }
 
-
-        /* ---------- Next Slide ---------- */
-
-        function nextSlide() {
-
-            currentIndex = (currentIndex + 1) % totalSlides;
-
-            updateCarousel();
-
-        }
+    ];
 
 
-        /* ---------- Previous Slide ---------- */
+    /* ======================================
+       ELEMENTS
+    ====================================== */
 
-        function previousSlide() {
+    const panels = document.querySelectorAll(
+        "[data-course-panel]"
+    );
 
-            currentIndex = (currentIndex - 1 + totalSlides) % totalSlides;
+    const dialog = document.getElementById("courseDialog");
 
-            updateCarousel();
+    const dialogTitle = document.getElementById(
+        "dialogCourseTitle"
+    );
 
-        }
-
-
-        /* ---------- Arrow Events ---------- */
-
-        nextButton?.addEventListener("click", nextSlide);
-
-        previousButton?.addEventListener("click", previousSlide);
-
-
-        /* ---------- Dot Events ---------- */
-
-        dots.forEach((dot, index) => {
-
-            dot.addEventListener("click", () => {
-
-                currentIndex = index;
-
-                updateCarousel();
-
-            });
-
-        });
+    const dialogDescription = document.getElementById(
+        "dialogCourseDescription"
+    );
 
 
-        /* ---------- Initial State ---------- */
+    /* ======================================
+       COURSE CARD TEMPLATE
+    ====================================== */
 
-        updateCarousel();
+    function createCourseCard(course, type) {
 
-    });
+        const category = type === "in-person"
+            ? "حضوری"
+            : "آنلاین";
 
+        const article = document.createElement("article");
 
+        article.className = "course-card";
 
-    /* =================================================
-       COURSE DETAILS DIALOG
-       ================================================= */
+        const image = document.createElement("div");
 
-    const courseDialog = document.getElementById("courseDialog");
+        image.className =
+            `course-card__image course-card__image--${course.color}`;
 
-    const dialogTitle = document.getElementById("dialogCourseTitle");
+        const categoryLabel = document.createElement("span");
 
-    const dialogDescription = document.getElementById("dialogCourseDescription");
+        categoryLabel.className = "course-card__category";
+        categoryLabel.textContent = category;
 
-    const courseButtons = document.querySelectorAll("[data-course-title]");
+        image.appendChild(categoryLabel);
 
-    const closeButtons = document.querySelectorAll("[data-dialog-close]");
+        image.insertAdjacentHTML(
+            "beforeend",
+            `
+                <svg viewBox="0 0 120 80" aria-hidden="true">
+                    <path d="M18 65 43 29 64 55 79 39 105 65Z"></path>
+                    <circle cx="83" cy="20" r="8"></circle>
+                </svg>
+            `
+        );
 
+        const body = document.createElement("div");
 
-    /* ---------- Open Course Details ---------- */
+        body.className = "course-card__body";
 
-    courseButtons.forEach((button) => {
+        const title = document.createElement("h4");
+        title.textContent = course.title;
+
+        const description = document.createElement("p");
+        description.textContent = course.description;
+
+        const meta = document.createElement("div");
+        meta.className = "course-card__meta";
+
+        const level = document.createElement("span");
+        level.textContent = course.level;
+
+        const dot = document.createElement("span");
+        dot.textContent = "●";
+
+        meta.append(level, dot);
+
+        const button = document.createElement("button");
+
+        button.className = "course-card__button";
+        button.type = "button";
+
+        button.innerHTML = `
+            مشاهده جزئیات
+            <span>←</span>
+        `;
 
         button.addEventListener("click", () => {
 
-            const title = button.dataset.courseTitle;
+            dialogTitle.textContent = course.title;
 
-            const description = button.dataset.courseDescription;
+            dialogDescription.textContent = course.description;
 
-
-            dialogTitle.textContent = title;
-
-            dialogDescription.textContent = description;
-
-
-            if (typeof courseDialog.showModal === "function") {
-
-                courseDialog.showModal();
-
+            if (dialog && !dialog.open) {
+                dialog.showModal();
             }
 
         });
 
-    });
+        body.append(
+            title,
+            description,
+            meta,
+            button
+        );
 
+        article.append(image, body);
 
-    /* ---------- Close Dialog ---------- */
-
-    closeButtons.forEach((button) => {
-
-        button.addEventListener("click", () => {
-
-            courseDialog.close();
-
-        });
-
-    });
-
-
-    /* ---------- Close On Backdrop ---------- */
-
-    courseDialog?.addEventListener("click", (event) => {
-
-        if (event.target === courseDialog) {
-
-            courseDialog.close();
-
-        }
-
-    });
-
-
-
-    /* =================================================
-       RESERVATION NOTIFICATION
-       ================================================= */
-
-    const reservationButtons = document.querySelectorAll("[data-reservation]");
-
-    const toast = document.getElementById("learningToast");
-
-    let toastTimer = null;
-
-
-    /* ---------- Show Notification ---------- */
-
-    function showToast(message) {
-
-        if (!toast) return;
-
-        toast.textContent = message;
-
-        toast.classList.add("is-visible");
-
-
-        clearTimeout(toastTimer);
-
-        toastTimer = setTimeout(() => {
-
-            toast.classList.remove("is-visible");
-
-        }, 3500);
+        return article;
 
     }
 
 
-    /* ---------- Reservation Events ---------- */
+    /* ======================================
+       INITIALIZE EACH CAROUSEL
+    ====================================== */
 
-    reservationButtons.forEach((button) => {
+    function initializeCarousel(panel) {
 
-        button.addEventListener("click", () => {
+        const type = panel.dataset.coursePanel;
 
-            const hallName = button.dataset.reservation;
+        const track = panel.querySelector(".course-track");
 
-            showToast(
-                `بخش ثبت درخواست ${hallName} هنوز به سامانه رزرو متصل نشده است.`
+        const dotsContainer = panel.querySelector(".carousel-dots");
+
+        const previousButton = panel.querySelector(
+            "[data-carousel-prev]"
+        );
+
+        const nextButton = panel.querySelector(
+            "[data-carousel-next]"
+        );
+
+        const countElement = panel.querySelector(
+            "[data-course-count]"
+        );
+
+        if (!track || !dotsContainer) return;
+
+
+        const pageSize = 3;
+
+        const pageCount = Math.ceil(courses.length / pageSize);
+
+        let currentPage = 0;
+
+
+        /* Course count */
+
+        countElement.textContent =
+            `${new Intl.NumberFormat("fa-IR").format(courses.length)} دوره`;
+
+
+        /* Create slides */
+
+        for (let i = 0; i < pageCount; i++) {
+
+            const slide = document.createElement("div");
+
+            slide.className = "course-slide";
+
+            const start = i * pageSize;
+
+            const pageCourses = courses.slice(
+                start,
+                start + pageSize
             );
+
+            pageCourses.forEach(course => {
+
+                slide.appendChild(
+                    createCourseCard(course, type)
+                );
+
+            });
+
+            track.appendChild(slide);
+
+
+            /* Create pagination dot */
+
+            const dot = document.createElement("button");
+
+            dot.className = "carousel-dot";
+
+            dot.type = "button";
+
+            dot.setAttribute(
+                "aria-label",
+                `صفحه ${i + 1}`
+            );
+
+            dot.addEventListener("click", () => {
+                goToPage(i);
+            });
+
+            dotsContainer.appendChild(dot);
+
+        }
+
+
+        /* Update carousel */
+
+        function updateCarousel() {
+
+            track.style.transform =
+                `translateX(-${currentPage * 100}%)`;
+
+            const dots = dotsContainer.querySelectorAll(
+                ".carousel-dot"
+            );
+
+            dots.forEach((dot, index) => {
+
+                const active = index === currentPage;
+
+                dot.classList.toggle("is-active", active);
+
+                if (active) {
+                    dot.setAttribute("aria-current", "true");
+                } else {
+                    dot.removeAttribute("aria-current");
+                }
+
+            });
+
+            previousButton.disabled = currentPage === 0;
+
+            nextButton.disabled = currentPage === pageCount - 1;
+
+        }
+
+
+        /* Go to specific page */
+
+        function goToPage(index) {
+
+            currentPage = Math.max(
+                0,
+                Math.min(index, pageCount - 1)
+            );
+
+            updateCarousel();
+
+        }
+
+
+        /* Navigation */
+
+        previousButton.addEventListener("click", () => {
+            goToPage(currentPage - 1);
+        });
+
+        nextButton.addEventListener("click", () => {
+            goToPage(currentPage + 1);
+        });
+
+
+        updateCarousel();
+
+    }
+
+
+    /* ======================================
+       CLOSE COURSE DIALOG
+    ====================================== */
+
+    if (dialog) {
+
+        dialog.querySelectorAll("[data-dialog-close]")
+            .forEach(button => {
+
+                button.addEventListener("click", () => {
+                    dialog.close();
+                });
+
+            });
+
+        dialog.addEventListener("click", event => {
+
+            if (event.target === dialog) {
+                dialog.close();
+            }
 
         });
 
-    });
+    }
 
+
+    /* ======================================
+       START
+    ====================================== */
+
+    panels.forEach(initializeCarousel);
 
 })();
