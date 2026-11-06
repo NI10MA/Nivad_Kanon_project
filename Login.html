@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>ورود و ثبت‌نام | آموزش</title>
+
+    <link rel="stylesheet" href="login.css">
+
+    <script src="login.js" defer></script>
+</head>
+
+<body>
+
+    <main class="auth-page">
+
+        <div class="auth-container">
+
+            <!-- Close Button -->
+            <a href="index.html" class="close-button" aria-label="بازگشت">
+                ×
+            </a>
+
+            <!-- Form Card -->
+            <section class="auth-card">
+
+                <!-- Tabs -->
+                <div class="auth-tabs">
+
+                    <button
+                        type="button"
+                        class="auth-tab active"
+                        id="signupTab"
+                    >
+                        ثبت‌نام
+                    </button>
+
+                    <button
+                        type="button"
+                        class="auth-tab"
+                        id="loginTab"
+                    >
+                        ورود
+                    </button>
+
+                </div>
+
+                <!-- Signup Form -->
+                <form id="signupForm" class="auth-form">
+
+                    <div class="form-heading">
+                        <h1>ایجاد حساب کاربری</h1>
+                        <p>به خانواده آموزشی ما بپیوندید</p>
+                    </div>
+
+                    <div class="form-group">
+
+                        <label for="signupUsername">
+                            نام کاربری
+                        </label>
+
+                        <input
+                            type="text"
+                            id="signupUsername"
+                            placeholder="نام کاربری خود را وارد کنید"
+                            minlength="3"
+                            maxlength="30"
+                            autocomplete="username"
+                            required
+                        >
+
+                    </div>
+
+                    <div class="form-group">
+
+                        <label for="signupPassword">
+                            رمز عبور
+                        </label>
+
+                        <input
+                            type="password"
+                            id="signupPassword"
+                            placeholder="رمز عبور خود را وارد کنید"
+                            minlength="8"
+                            autocomplete="new-password"
+                            required
+                        >
+
+                    </div>
+
+                    <div class="form-group">
+
+                        <label for="confirmPassword">
+                            تکرار رمز عبور
+                        </label>
+
+                        <input
+                            type="password"
+                            id="confirmPassword"
+                            placeholder="رمز عبور را دوباره وارد کنید"
+                            minlength="8"
+                            autocomplete="new-password"
+                            required
+                        >
+
+                    </div>
+
+                    <button type="submit" class="submit-button">
+                        ساخت حساب کاربری
+                    </button>
+
+                    <p class="form-message" id="signupMessage" aria-live="polite"></p>
+
+                    <p class="form-switch-text">
+                        قبلاً حساب ساخته‌اید؟
+                        <button type="button" data-switch="login">
+                            وارد شوید
+                        </button>
+                    </p>
+
+                </form>
+
+
+                <!-- Login Form -->
+                <form id="loginForm" class="auth-form hidden">
+
+                    <div class="form-heading">
+                        <h1>خوش آمدید!</h1>
+                        <p>برای ورود به حساب خود اطلاعاتتان را وارد کنید</p>
+                    </div>
+
+                    <div class="form-group">
+
+                        <label for="loginUsername">
+                            نام کاربری
+                        </label>
+
+                        <input
+                            type="text"
+                            id="loginUsername"
+                            placeholder="نام کاربری خود را وارد کنید"
+                            autocomplete="username"
+                            required
+                        >
+
+                    </div>
+
+                    <div class="form-group">
+
+                        <label for="loginPassword">
+                            رمز عبور
+                        </label>
+
+                        <input
+                            type="password"
+                            id="loginPassword"
+                            placeholder="رمز عبور خود را وارد کنید"
+                            autocomplete="current-password"
+                            required
+                        >
+
+                    </div>
+
+                    <button type="submit" class="submit-button">
+                        ورود به حساب
+                    </button>
+
+                    <p class="form-message" id="loginMessage" aria-live="polite"></p>
+
+                    <p class="form-switch-text">
+                        هنوز حساب ندارید؟
+                        <button type="button" data-switch="signup">
+                            ثبت‌نام کنید
+                        </button>
+                    </p>
+
+                </form>
+
+            </section>
+
+            <p class="auth-footer">
+                © تمامی حقوق برای مجموعه آموزشی محفوظ است.
+            </p>
+
+        </div>
+
+    </main>
+
+</body>
+</html>

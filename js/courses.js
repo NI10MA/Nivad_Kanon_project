@@ -111,10 +111,166 @@
             description: "آشنایی عملی با آزمایش‌های علمی و مشاهده پدیده‌ها.",
             level: "سطح مقدماتی",
             color: "blue"
-        }
+        },
 
     ];
 
+    
+const educationalCourses = [
+    {
+        title: "قرآن",
+        description: "آموزش روخوانی، روان‌خوانی و آشنایی با مفاهیم قرآنی.",
+        level: "سطح مقدماتی",
+        color: "blue"
+    },
+    {
+        title: "مهارت‌های زندگی",
+        description: "تقویت مهارت‌های فردی، اجتماعی و تصمیم‌گیری.",
+        level: "سطح عمومی",
+        color: "purple"
+    },
+    {
+        title: "فن بیان و سخنوری",
+        description: "افزایش اعتمادبه‌نفس و توانایی صحبت در جمع.",
+        level: "سطح عمومی",
+        color: "orange"
+    },
+    {
+        title: "تئاتر و بازیگری",
+        description: "آشنایی با بازیگری، نمایش و پرورش خلاقیت.",
+        level: "سطح مقدماتی",
+        color: "green"
+    },
+    {
+        title: "هوش مصنوعی دختران",
+        description: "آشنایی با هوش مصنوعی و کاربردهای خلاقانه آن.",
+        level: "سطح مقدماتی",
+        color: "pink"
+    },
+    {
+        title: "هوش مصنوعی پسران",
+        description: "یادگیری مفاهیم و ابزارهای هوش مصنوعی.",
+        level: "سطح مقدماتی",
+        color: "gold"
+    },
+    {
+        title: "نقاشی",
+        description: "آموزش تکنیک‌های نقاشی و تقویت خلاقیت هنری.",
+        level: "سطح مقدماتی",
+        color: "orange"
+    },
+    {
+        title: "مهارت‌های کامپیوتری",
+        description: "آشنایی با کامپیوتر، نرم‌افزارها و مهارت‌های دیجیتال.",
+        level: "سطح مقدماتی",
+        color: "blue"
+    },
+    {
+        title: "خوشنویسی",
+        description: "آموزش اصول نوشتار زیبا و هنر خوشنویسی.",
+        level: "سطح مقدماتی",
+        color: "purple"
+    },
+    {
+        title: "زبان مبتدی",
+        description: "آشنایی با واژگان و مکالمات پایه زبان.",
+        level: "سطح مقدماتی",
+        color: "green"
+    },
+    {
+        title: "موسیقی",
+        description: "آشنایی با مبانی موسیقی، ریتم و نواختن.",
+        level: "سطح مقدماتی",
+        color: "pink"
+    },
+    {
+        title: "ریاضیات",
+        description: "تقویت مهارت حل مسئله و تفکر منطقی.",
+        level: "سطح عمومی",
+        color: "gold"
+    },
+    {
+        title: "منبت‌کاری",
+        description: "آشنایی با هنر منبت و تکنیک‌های کار با چوب.",
+        level: "سطح مقدماتی",
+        color: "orange"
+    },
+    {
+        title: "علوم آزمایشگاهی",
+        description: "آشنایی عملی با آزمایش‌های علمی و مشاهده پدیده‌ها.",
+        level: "سطح مقدماتی",
+        color: "blue"
+    }
+];
+
+const sportsCourses = [
+    {
+        title: "تیراندازی آقایان",
+        description: "آشنایی با اصول ایمنی و مبانی ورزشی تیراندازی زیر نظر مربی.",
+        level: "سطح مقدماتی",
+        color: "green"
+    },
+    {
+        title: "تکواندو پسران",
+        description: "آشنایی با فنون پایه تکواندو و اصول آمادگی ورزشی.",
+        level: "سطح مقدماتی",
+        color: "orange"
+    },
+    {
+        title: "شطرنج",
+        description: "آموزش قوانین، تاکتیک‌ها و تقویت تفکر استراتژیک.",
+        level: "سطح مقدماتی",
+        color: "blue"
+    },
+    {
+        title: "تیراندازی بانوان",
+        description: "آشنایی با اصول ایمنی و مبانی ورزشی تیراندازی زیر نظر مربی.",
+        level: "سطح مقدماتی",
+        color: "green"
+    },
+    {
+        title: "تکواندو دختران",
+        description: "آشنایی با فنون پایه تکواندو و اصول آمادگی ورزشی.",
+        level: "سطح مقدماتی",
+        color: "orange"
+    },
+    {
+        title: "کاراته دختران",
+        description: "آشنایی با فنون پایه کاراته و اصول آمادگی جسمانی.",
+        level: "سطح مقدماتی",
+        color: "purple"
+    },
+    {
+        title: "ژیمناستیک پسران",
+        description: "آشنایی با حرکات پایه ژیمناستیک و تمرین‌های تعادلی.",
+        level: "سطح مقدماتی",
+        color: "gold"
+    },
+    {
+        title: "ژیمناستیک دختران",
+        description: "آشنایی با حرکات پایه ژیمناستیک و تمرین‌های تعادلی.",
+        level: "سطح مقدماتی",
+        color: "gold"
+    },
+    {
+        title: "ایروبیک و پیلاتس",
+        description: "تمرین‌های حرکتی، انعطاف‌پذیری و تقویت هماهنگی بدن.",
+        level: "سطح عمومی",
+        color: "pink"
+    },
+    {
+        title: "بازی و ورزش کودکان",
+        description: "فعالیت‌های حرکتی و بازی‌های گروهی متناسب با کودکان.",
+        level: "سطح مقدماتی",
+        color: "pink"
+    },
+    {
+        title: "ورزش سالمندان",
+        description: "فعالیت‌های حرکتی متناسب با توانایی و شرایط سنی سالمندان.",
+        level: "سطح عمومی",
+        color: "blue"
+    }
+];
 
     /* ======================================
        ELEMENTS
@@ -141,7 +297,9 @@
 
     function createCourseCard(course, type) {
 
-        const category = type === "in-person"
+        const category = type === "sports"
+        ? "ورزشی"
+        : type === "in-person"
             ? "حضوری"
             : "آنلاین";
 
@@ -235,6 +393,10 @@
     function initializeCarousel(panel) {
 
         const type = panel.dataset.coursePanel;
+
+        const courses = type === "sports"
+        ? sportsCourses
+        : educationalCourses;
 
         const track = panel.querySelector(".course-track");
 

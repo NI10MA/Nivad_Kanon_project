@@ -8,6 +8,7 @@
   <meta name="theme-color" content="#0B0F0D">
   <link rel="stylesheet"href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
   <link rel="stylesheet" href="style.css">
+  <!-- <link rel="stylesheet" href="Login.css"> -->
 </head>
 <body>
 
@@ -26,8 +27,9 @@
       </span>
     </a>
 
-      <a class="login-button" href="#login"><i class="fa-regular fa-user"></i><span>ورود / ثبت‌ نام</span></a>
-
+    <div class="footer-brand">
+        <a class="login-button" href="Login.html"><i class="fa-regular fa-user"></i><span>ورود / ثبت‌ نام</span></a>
+    </div>
     <button class="burger" id="burger" type="button" aria-expanded="false" aria-controls="mainNav">
       <span class="burger__label">منو</span>
       <span class="burger__bars" aria-hidden="true"><i></i><i></i></span>
@@ -248,8 +250,6 @@
         </div>
 
     </section>
-
-
     <!-- =====================================
          02. ONLINE COURSES
     ====================================== -->
@@ -329,6 +329,126 @@
     </section>
 
 </div>
+
+    <!-- =========================================
+     LEARNING HUB / COURSES SECTION
+========================================= -->
+
+    <section class="learning-hub" id="courses">
+
+        <div class="learning-container">
+
+        <!-- Section Heading -->
+            <div class="learning-heading">
+
+                <div class="learning-heading__content">
+
+                    <span class="learning-heading__eyebrow">
+                       مسیر رشد و یادگیری
+                    </span>
+
+                    <h2 class="learning-heading__title">
+                       دوره‌های ورزشی
+                    </h2>
+
+                    <p class="learning-heading__description">
+                       فضایی برای یادگیری، تجربه و پرورش استعدادهای شما
+                    </p>
+
+                </div>
+
+                <a href="#courses" class="learning-heading__link">
+                   مشاهده دوره‌ها
+                    <span aria-hidden="true">←</span>
+                </a>
+
+            </div>
+
+
+        
+<!-- =========================================
+     COURSES PANELS
+========================================= -->
+
+<div class="courses-grid">
+
+    <!-- =====================================
+         01. SPORTS COURSES
+    ====================================== -->
+
+    <section
+        class="course-panel"
+        aria-label="دوره‌های حضوری"
+        data-course-panel="sports"
+    >
+
+        <div class="course-panel__heading">
+
+            <div class="course-panel__title-group">
+
+                <span class="course-panel__icon">
+                    <svg viewBox="0 0 24 24" aria-hidden="true">
+                        <path d="M12 3 3 8v2h18V8l-9-5Z"></path>
+                        <path d="M5 10v8M10 10v8M14 10v8M19 10v8M3 20h18"></path>
+                    </svg>
+                </span>
+
+                <div>
+                    <h3>دوره‌های حضوری</h3>
+                    <p>یادگیری در کنار دوستان و مربیان</p>
+                </div>
+
+            </div>
+
+        </div>
+
+        <div class="course-panel__content">
+
+            <div class="course-panel__topbar">
+
+                <span>دوره‌های قابل ثبت‌ نام</span>
+
+                <span class="course-panel__count" data-course-count>
+                    ۱۴ دوره
+                </span>
+
+            </div>
+
+            <div class="course-carousel" data-carousel>
+
+                <div class="course-track"></div>
+
+            </div>
+
+            <div class="course-panel__footer">
+
+                <div class="carousel-dots"></div>
+
+            </div>
+
+        </div>
+
+        <div class="course-panel__controls">
+
+            <button
+                type="button"
+                data-carousel-prev
+                aria-label="دوره‌های قبلی"
+            >
+                ‹
+            </button>
+
+            <button
+                type="button"
+                data-carousel-next
+                aria-label="دوره‌های بعدی"
+            >
+                ›
+            </button>
+
+        </div>
+
+    </section>
 
         <!-- =================================
              RESERVATION BANNERS
@@ -413,12 +533,266 @@
     </div>
 
 </section>
-<section class="after" id="courses">
+<!-- <section class="after" id="courses">
     <a class="btn btn--primary" href="#hero" id="backTop">بازگشت به ورودی</a>
+</section> -->
+<!-- لیست مربیان -->
+
+<!-- ===============================
+     Mentors Section
+================================ -->
+
+<section class="mentors-section">
+
+    <!-- Section Header -->
+    <div class="section-header">
+
+        <div>
+            <h2>مربیان ما</h2>
+            <p>تجربه، تخصص و همراهی شما در مسیر یادگیری</p>
+        </div>
+
+        <button id="showMentorsBtn" class="view-all" type="button">
+            مشاهده همه مربیان ←
+        </button>
+
+    </div>
+
+
+    <!-- Mentors Container -->
+<div class="mentors-container">
+
+    <div class="mentors-list">
+
+        <!-- Mentor 1 -->
+        <div class="mentor-card">
+
+            <i class="fa-solid fa-user-tie mentor-avatar"></i>
+
+            <div class="mentor-info">
+                <h3>خانم ترابی</h3>
+                <p>مربی بازی و ورزش کودکان</p>
+                <span>مدرک؟</span>
+            </div>
+
+            <div class="mentor-rating">★ 5.0</div>
+        </div>
+
+
+        <!-- Mentor 2 -->
+        <div class="mentor-card">
+
+            <i class="fa-solid fa-user-tie mentor-avatar"></i>
+
+            <div class="mentor-info">
+                <h3>خانم نوری</h3>
+                <p>مربی ایروبیک و پیلاتس</p>
+                <span>مدرک؟</span>
+            </div>
+
+            <div class="mentor-rating">★ 5.0</div>
+        </div>
+
+
+        <!-- Mentor 3 -->
+        <div class="mentor-card">
+
+            <i class="fa-solid fa-user-tie mentor-avatar"></i>
+
+            <div class="mentor-info">
+                <h3>خانم خلیلی</h3>
+                <p>مربی ژیمناستیک دختران</p>
+                <span>مدرک؟</span>
+            </div>
+
+            <div class="mentor-rating">★ 5.0</div>
+        </div>
+
+
+        <!-- Mentor 4 -->
+        <div class="mentor-card">
+
+            <i class="fa-solid fa-user-tie mentor-avatar"></i>
+
+            <div class="mentor-info">
+                <h3>خانم خدابنده لو</h3>
+                <p>مربی تکواندو دختران</p>
+                <span>مدرک؟</span>
+            </div>
+
+            <div class="mentor-rating">★ 5.0</div>
+        </div>
+
+
+        <!-- Extra Mentor 5 -->
+        <div class="mentor-card extra-mentor">
+
+            <i class="fa-solid fa-user-tie mentor-avatar"></i>
+
+            <div class="mentor-info">
+                <h3>خانم پیرانی</h3>
+                <p>مربی ورزش سالمندان</p>
+                <span>مدرک؟</span>
+            </div>
+
+            <div class="mentor-rating">★ 5.0</div>
+        </div>
+
+
+        <!-- Extra Mentor 6 -->
+        <div class="mentor-card extra-mentor">
+
+            <i class="fa-solid fa-user-tie mentor-avatar"></i>
+
+            <div class="mentor-info">
+                <h3>خانم موسوی</h3>
+                <p>مربی کاراته دختران</p>
+                <span>مدرک؟</span>
+            </div>
+
+            <div class="mentor-rating">★ 5.0</div>
+        </div>
+
+
+        <!-- Extra Mentor 7 -->
+        <div class="mentor-card extra-mentor">
+
+            <i class="fa-solid fa-user-tie mentor-avatar"></i>
+
+            <div class="mentor-info">
+                <h3>آقای شعبانی</h3>
+                <p>مربی تکواندو پسران</p>
+                <span>مدرک؟</span>
+            </div>
+
+            <div class="mentor-rating">★ 5.0</div>
+        </div>
+
+
+        <!-- Extra Mentor 8 -->
+        <div class="mentor-card extra-mentor">
+
+            <i class="fa-solid fa-user-tie mentor-avatar"></i>
+
+            <div class="mentor-info">
+                <h3>خانم جهانی</h3>
+                <p>مربی کاراته دختران</p>
+                <span>مدرک؟</span>
+            </div>
+
+            <div class="mentor-rating">★ 5.0</div>
+        </div>
+
+
+        <!-- Extra Mentor 9 -->
+        <div class="mentor-card extra-mentor">
+
+            <i class="fa-solid fa-user-tie mentor-avatar"></i>
+
+            <div class="mentor-info">
+                <h3>آقای عبدالرحمانی</h3>
+                <p>مربی ژیمناستیک پسران</p>
+                <span>مدرک؟</span>
+            </div>
+
+            <div class="mentor-rating">★ 5.0</div>
+        </div>
+
+    </div>
+</div>
+
 </section>
 
+<!-- فوتر -->
 
+<footer class="site-footer" id="Footer">
 
+    <!-- Social Media -->
+    <div class="footer-socials">
+        <a href="#" aria-label="تلگرام" title="تلگرام">
+            <svg viewBox="0 0 24 24">
+                <path d="M21.5 3.5 18.2 20c-.25 1.16-.92 1.45-1.86.9l-5.15-3.8-2.49 2.4c-.28.28-.52.52-1.06.52l.37-5.24 9.54-8.62c.41-.37-.09-.57-.63-.2L5.13 13.4.04 11.81c-1.1-.34-1.12-1.1.23-1.61L20.16 2.5c.92-.34 1.72.22 1.34 1z"/>
+            </svg>
+        </a>
+
+        <a href="#" aria-label="اینستاگرام" title="اینستاگرام">
+            <svg viewBox="0 0 24 24">
+                <rect x="3" y="3" width="18" height="18" rx="5"/>
+                <circle cx="12" cy="12" r="4"/>
+                <circle cx="18" cy="6" r="1" class="icon-fill"/>
+            </svg>
+        </a>
+
+        <a href="#" aria-label="واتساپ" title="واتساپ">
+            <svg viewBox="0 0 24 24">
+                <path d="M20.5 11.7a8.5 8.5 0 0 1-12.6 7.4L3 20.5l1.4-4.7a8.5 8.5 0 1 1 16.1-4.1z"/>
+                <path d="M8.5 7.5c-.3 0-.7.1-.9.5-.3.4-1 1.1-1 2.6s1 3 1.2 3.2c.2.2 2 3.1 5 4.2 2.5 1 3 .8 3.5.7.5-.1 1.7-.7 2-1.4.2-.7.2-1.2.1-1.4-.1-.1-.3-.2-.7-.4l-2-1c-.3-.1-.5-.2-.7.2l-.9 1.1c-.2.2-.4.3-.7.1a8 8 0 0 1-2.4-1.5 9 9 0 0 1-1.6-2c-.2-.3 0-.5.1-.6l.6-.7c.2-.2.2-.4.3-.6.1-.2 0-.4 0-.6l-.9-2.1c-.2-.5-.4-.4-.7-.4z"/>
+            </svg>
+        </a>
+
+        <a href="#" aria-label="آپارات" title="آپارات">
+            <span class="aparat-icon">A</span>
+        </a>
+    </div>
+
+    <!-- Navigation -->
+    <nav class="footer-nav">
+        <a href="#hero">خانه</a>
+        <a href="#courses">دوره‌ها</a>
+        <a href="#mentors">مربیان</a>
+        <a href="#about">درباره ما</a>
+        <a href="#news">اخبار و رویدادها</a>
+        <a href="#contact">ارتباط با ما</a>
+    </nav>
+
+    <!-- Brand -->
+    <div class="footer-brand">
+        <div class="footer-brand-text">
+            <h3>کانون آموزش و پرورش</h3>
+            <p>با هم برای آینده بهتر</p>
+        </div>
+          
+    <div class="footer-logo">
+        <svg viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg">
+
+        <!-- شعله و نماد بالای کتاب -->
+            <path class="logo-gold"
+                d="M32 3
+                    C25 10 25 16 32 22
+                    C39 16 39 10 32 3Z"/>
+
+            <path class="logo-white"
+                d="M32 13
+                    C27 18 28 23 32 27
+                    C36 23 37 18 32 13Z"/>
+
+        <!-- صفحه سمت راست -->
+            <path class="logo-white"
+                d="M35 27
+                    C43 22 51 23 59 29
+                    L59 55
+                    C51 50 43 50 35 55Z"/>
+
+        <!-- صفحه سمت چپ -->
+            <path class="logo-white"
+                d="M29 27
+                    C21 22 13 23 5 29
+                    L5 55
+                    C13 50 21 50 29 55Z"/>
+
+        <!-- خطوط صفحات -->
+            <path d="M32 28 V57"
+                fill="none"
+                stroke="#D6AD28"
+                stroke-width="2.5"
+                stroke-linecap="round"/>
+
+        </svg>
+    </div>
+
+    </div> <!-- پایان footer-brand -->
+
+</footer>
 <!-- =========================================
      COURSE DETAILS DIALOG
 ========================================= -->
@@ -469,16 +843,12 @@
     aria-live="polite"
 ></div>
 
-
-
- <!-- Learning Hub -->
-<script src="js/courses.js"></script>
-
   </main>
-
+  <script src="js/courses.js"></script>
   <script src="js/gsap.min.js"></script>
   <script src="js/ScrollTrigger.min.js"></script>
   <script src="main.js"></script>
-  
+  <script src="script.js"></script>
+  <script src="Login.js"></script>
 </body>
 </html>
