@@ -1,0 +1,352 @@
+[
+ {
+  "model": "core.course",
+  "pk": 1,
+  "fields": {
+   "title": "قرآن",
+   "description": "آموزش روخوانی، روان‌خوانی و آشنایی با مفاهیم قرآنی.",
+   "category": "educational",
+   "level": "سطح مقدماتی",
+   "color": "blue",
+   "instructor": null,
+   "capacity": 30,
+   "is_active": true
+  }
+ },
+ {
+  "model": "core.course",
+  "pk": 2,
+  "fields": {
+   "title": "مهارت‌های زندگی",
+   "description": "تقویت مهارت‌های فردی، اجتماعی و تصمیم‌گیری.",
+   "category": "educational",
+   "level": "سطح عمومی",
+   "color": "purple",
+   "instructor": null,
+   "capacity": 30,
+   "is_active": true
+  }
+ },
+ {
+  "model": "core.course",
+  "pk": 3,
+  "fields": {
+   "title": "فن بیان و سخنوری",
+   "description": "افزایش اعتمادبه‌نفس و توانایی صحبت در جمع.",
+   "category": "educational",
+   "level": "سطح عمومی",
+   "color": "orange",
+   "instructor": null,
+   "capacity": 30,
+   "is_active": true
+  }
+ },
+ {
+  "model": "core.course",
+  "pk": 4,
+  "fields": {
+   "title": "تئاتر و بازیگری",
+   "description": "آشنایی با بازیگری، نمایش و پرورش خلاقیت.",
+   "category": "educational",
+   "level": "سطح مقدماتی",
+   "color": "green",
+   "instructor": null,
+   "capacity": 30,
+   "is_active": true
+  }
+ },
+ {
+  "model": "core.course",
+  "pk": 5,
+  "fields": {
+   "title": "هوش مصنوعی دختران",
+   "description": "آشنایی با هوش مصنوعی و کاربردهای خلاقانه آن.",
+   "category": "educational",
+   "level": "سطح مقدماتی",
+   "color": "pink",
+   "instructor": null,
+   "capacity": 30,
+   "is_active": true
+  }
+ },
+ {
+  "model": "core.course",
+  "pk": 6,
+  "fields": {
+   "title": "هوش مصنوعی پسران",
+   "description": "یادگیری مفاهیم و ابزارهای هوش مصنوعی.",
+   "category": "educational",
+   "level": "سطح مقدماتی",
+   "color": "gold",
+   "instructor": null,
+   "capacity": 30,
+   "is_active": true
+  }
+ },
+ {
+  "model": "core.course",
+  "pk": 7,
+  "fields": {
+   "title": "نقاشی",
+   "description": "آموزش تکنیک‌های نقاشی و تقویت خلاقیت هنری.",
+   "category": "educational",
+   "level": "سطح مقدماتی",
+   "color": "orange",
+   "instructor": null,
+   "capacity": 30,
+   "is_active": true
+  }
+ },
+ {
+  "model": "core.course",
+  "pk": 8,
+  "fields": {
+   "title": "مهارت‌های کامپیوتری",
+   "description": "آشنایی با کامپیوتر، نرم‌افزارها و مهارت‌های دیجیتال.",
+   "category": "educational",
+   "level": "سطح مقدماتی",
+   "color": "blue",
+   "instructor": null,
+   "capacity": 30,
+   "is_active": true
+  }
+ },
+ {
+  "model": "core.course",
+  "pk": 9,
+  "fields": {
+   "title": "خوشنویسی",
+   "description": "آموزش اصول نوشتار زیبا و هنر خوشنویسی.",
+   "category": "educational",
+   "level": "سطح مقدماتی",
+   "color": "purple",
+   "instructor": null,
+   "capacity": 30,
+   "is_active": true
+  }
+ },
+ {
+  "model": "core.course",
+  "pk": 10,
+  "fields": {
+   "title": "زبان مبتدی",
+   "description": "آشنایی با واژگان و مکالمات پایه زبان.",
+   "category": "educational",
+   "level": "سطح مقدماتی",
+   "color": "green",
+   "instructor": null,
+   "capacity": 30,
+   "is_active": true
+  }
+ },
+ {
+  "model": "core.course",
+  "pk": 11,
+  "fields": {
+   "title": "موسیقی",
+   "description": "آشنایی با مبانی موسیقی، ریتم و نواختن.",
+   "category": "educational",
+   "level": "سطح مقدماتی",
+   "color": "pink",
+   "instructor": null,
+   "capacity": 30,
+   "is_active": true
+  }
+ },
+ {
+  "model": "core.course",
+  "pk": 12,
+  "fields": {
+   "title": "ریاضیات",
+   "description": "تقویت مهارت حل مسئله و تفکر منطقی.",
+   "category": "educational",
+   "level": "سطح عمومی",
+   "color": "gold",
+   "instructor": null,
+   "capacity": 30,
+   "is_active": true
+  }
+ },
+ {
+  "model": "core.course",
+  "pk": 13,
+  "fields": {
+   "title": "منبت‌کاری",
+   "description": "آشنایی با هنر منبت و تکنیک‌های کار با چوب.",
+   "category": "educational",
+   "level": "سطح مقدماتی",
+   "color": "orange",
+   "instructor": null,
+   "capacity": 30,
+   "is_active": true
+  }
+ },
+ {
+  "model": "core.course",
+  "pk": 14,
+  "fields": {
+   "title": "علوم آزمایشگاهی",
+   "description": "آشنایی عملی با آزمایش‌های علمی و مشاهده پدیده‌ها.",
+   "category": "educational",
+   "level": "سطح مقدماتی",
+   "color": "blue",
+   "instructor": null,
+   "capacity": 30,
+   "is_active": true
+  }
+ },
+ {
+  "model": "core.course",
+  "pk": 15,
+  "fields": {
+   "title": "تیراندازی آقایان",
+   "description": "آشنایی با اصول ایمنی و مبانی ورزشی تیراندازی زیر نظر مربی.",
+   "category": "sports",
+   "level": "سطح مقدماتی",
+   "color": "green",
+   "instructor": null,
+   "capacity": 30,
+   "is_active": true
+  }
+ },
+ {
+  "model": "core.course",
+  "pk": 16,
+  "fields": {
+   "title": "تکواندو پسران",
+   "description": "آشنایی با فنون پایه تکواندو و اصول آمادگی ورزشی.",
+   "category": "sports",
+   "level": "سطح مقدماتی",
+   "color": "orange",
+   "instructor": null,
+   "capacity": 30,
+   "is_active": true
+  }
+ },
+ {
+  "model": "core.course",
+  "pk": 17,
+  "fields": {
+   "title": "شطرنج",
+   "description": "آموزش قوانین، تاکتیک‌ها و تقویت تفکر استراتژیک.",
+   "category": "sports",
+   "level": "سطح مقدماتی",
+   "color": "blue",
+   "instructor": null,
+   "capacity": 30,
+   "is_active": true
+  }
+ },
+ {
+  "model": "core.course",
+  "pk": 18,
+  "fields": {
+   "title": "تیراندازی بانوان",
+   "description": "آشنایی با اصول ایمنی و مبانی ورزشی تیراندازی زیر نظر مربی.",
+   "category": "sports",
+   "level": "سطح مقدماتی",
+   "color": "green",
+   "instructor": null,
+   "capacity": 30,
+   "is_active": true
+  }
+ },
+ {
+  "model": "core.course",
+  "pk": 19,
+  "fields": {
+   "title": "تکواندو دختران",
+   "description": "آشنایی با فنون پایه تکواندو و اصول آمادگی ورزشی.",
+   "category": "sports",
+   "level": "سطح مقدماتی",
+   "color": "orange",
+   "instructor": null,
+   "capacity": 30,
+   "is_active": true
+  }
+ },
+ {
+  "model": "core.course",
+  "pk": 20,
+  "fields": {
+   "title": "کاراته دختران",
+   "description": "آشنایی با فنون پایه کاراته و اصول آمادگی جسمانی.",
+   "category": "sports",
+   "level": "سطح مقدماتی",
+   "color": "purple",
+   "instructor": null,
+   "capacity": 30,
+   "is_active": true
+  }
+ },
+ {
+  "model": "core.course",
+  "pk": 21,
+  "fields": {
+   "title": "ژیمناستیک پسران",
+   "description": "آشنایی با حرکات پایه ژیمناستیک و تمرین‌های تعادلی.",
+   "category": "sports",
+   "level": "سطح مقدماتی",
+   "color": "gold",
+   "instructor": null,
+   "capacity": 30,
+   "is_active": true
+  }
+ },
+ {
+  "model": "core.course",
+  "pk": 22,
+  "fields": {
+   "title": "ژیمناستیک دختران",
+   "description": "آشنایی با حرکات پایه ژیمناستیک و تمرین‌های تعادلی.",
+   "category": "sports",
+   "level": "سطح مقدماتی",
+   "color": "gold",
+   "instructor": null,
+   "capacity": 30,
+   "is_active": true
+  }
+ },
+ {
+  "model": "core.course",
+  "pk": 23,
+  "fields": {
+   "title": "ایروبیک و پیلاتس",
+   "description": "تمرین‌های حرکتی، انعطاف‌پذیری و تقویت هماهنگی بدن.",
+   "category": "sports",
+   "level": "سطح عمومی",
+   "color": "pink",
+   "instructor": null,
+   "capacity": 30,
+   "is_active": true
+  }
+ },
+ {
+  "model": "core.course",
+  "pk": 24,
+  "fields": {
+   "title": "بازی و ورزش کودکان",
+   "description": "فعالیت‌های حرکتی و بازی‌های گروهی متناسب با کودکان.",
+   "category": "sports",
+   "level": "سطح مقدماتی",
+   "color": "pink",
+   "instructor": null,
+   "capacity": 30,
+   "is_active": true
+  }
+ },
+ {
+  "model": "core.course",
+  "pk": 25,
+  "fields": {
+   "title": "ورزش سالمندان",
+   "description": "فعالیت‌های حرکتی متناسب با توانایی و شرایط سنی سالمندان.",
+   "category": "sports",
+   "level": "سطح عمومی",
+   "color": "blue",
+   "instructor": null,
+   "capacity": 30,
+   "is_active": true
+  }
+ }
+]

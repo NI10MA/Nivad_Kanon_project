@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="fa" dir="rtl">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>ساخت حساب کاربری | سازمان دانش‌آموزی استان همدان</title>
+  <link rel="stylesheet" href="css/Login.css">
+  <script src="js/register.js" defer></script>
+</head>
+<body>
+  <main class="auth-page">
+    <div class="auth-container">
+      <a href="index.html" class="close-button" aria-label="بازگشت">×</a>
+      <section class="auth-card">
+        <div class="form-heading">
+          <h1>ایجاد حساب کاربری</h1>
+          <p>برای ثبت‌نام دوره‌ها و درخواست امکانات، حساب خود را بسازید.</p>
+        </div>
+        <form id="registerForm" class="auth-form">
+          <div class="form-group">
+            <label for="fullName">نام و نام خانوادگی دانش‌آموز</label>
+            <input id="fullName" name="full_name" maxlength="120" autocomplete="name" required>
+          </div>
+          <div class="form-group">
+            <label for="phone">شماره تماس والد / سرپرست</label>
+            <input id="phone" name="phone" type="tel" maxlength="20" autocomplete="tel" dir="ltr" required>
+          </div>
+          <div class="form-group">
+            <label for="username">نام کاربری</label>
+            <input id="username" name="username" minlength="3" maxlength="24" autocomplete="username" dir="ltr" required>
+          </div>
+          <div class="form-group">
+            <label for="password">رمز عبور</label>
+            <input id="password" name="password" type="password" minlength="8" autocomplete="new-password" dir="ltr" required>
+          </div>
+          <div class="form-group">
+            <label for="password2">تکرار رمز عبور</label>
+            <input id="password2" type="password" minlength="8" autocomplete="new-password" dir="ltr" required>
+          </div>
+          <button class="submit-button" type="submit">ساخت حساب کاربری</button>
+          <p class="form-message" id="registerMessage" role="status"></p>
+          <p class="form-switch-text">قبلاً حساب ساخته‌اید؟ <a href="Login.html?mode=login" style="color: var(--sage);">وارد شوید</a></p>
+        </form>
+      </section>
+      <p class="auth-footer">© تمامی حقوق برای سازمان دانش‌آموزی استان همدان محفوظ است.</p>
+    </div>
+  </main>
+</body>
+</html>

@@ -1,0 +1,177 @@
+/* استایل پنل مدیریت. فونت‌ها: وزیرمتن برای متن و لاله‌زار برای عنوان‌ها (از پوشه‌ی fonts) */
+@font-face { font-family: "Vazirmatn"; src: url("../fonts/Vazirmatn-Regular.ttf") format("truetype"); font-weight: 100 900; }
+@font-face { font-family: "Lalezar"; src: url("../fonts/Lalezar-Regular.ttf") format("truetype"); }
+
+/* متغیرهای رنگ و اندازه‌ی کلی (تم سرمه‌ای و طلایی)؛ برای تغییر ظاهر فقط همین‌ها را عوض کنید. */
+:root {
+  --navy-dark: #101b35;
+  --navy-mid: #243b64;
+  --navy-light: #526b94;
+  --gold-dark: #8d6816;
+  --gold: #d4af37;
+  --gold-light: #f5d76e;
+  --bg: #f4f5f8;
+  --card: #ffffff;
+  --line: #e3e6ee;
+  --text: #1a2238;
+  --muted: #667089;
+  --ok: #1f8a5b;
+  --warn: #b7791f;
+  --bad: #c0392b;
+  --radius: 14px;
+  --sidebar-w: 248px;
+  --font: "Vazirmatn", Tahoma, "Segoe UI", sans-serif;
+}
+
+/* تنظیمات پایه‌ی صفحه */
+* { box-sizing: border-box; }
+html, body { margin: 0; }
+body { font-family: var(--font); background: var(--bg); color: var(--text); font-size: 15px; line-height: 1.7; }
+/* تضمین می‌کند عنصر دارای hidden حتی با display دیگر هم پنهان بماند. */
+[hidden] { display: none !important; }
+button, input, select, textarea { font: inherit; color: inherit; }
+h1, h2, h3 { margin: 0; font-weight: 700; line-height: 1.4; }
+.muted { color: var(--muted); }
+/* حلقه‌ی فوکوس واضح برای کاربران صفحه‌کلید */
+:focus-visible { outline: 3px solid var(--gold); outline-offset: 2px; }
+
+/* چیدمان کلی: منوی کناری (ثابت) + ناحیه‌ی اصلی */
+/* ── shell ── */
+.shell { display: grid; grid-template-columns: var(--sidebar-w) 1fr; min-height: 100vh; }
+.sidebar { background: var(--navy-dark); color: #dfe5f3; display: flex; flex-direction: column; padding: 18px 14px; position: sticky; top: 0; height: 100vh; }
+.brand { display: flex; align-items: center; gap: 10px; font-family: "Lalezar", var(--font); font-size: 17px; line-height: 1.35; color: var(--gold-light); padding: 6px 8px 18px; }
+.brand__mark { display: grid; place-items: center; width: 38px; height: 38px; border-radius: 11px; background: linear-gradient(145deg, var(--gold-light), var(--gold-dark)); color: var(--navy-dark); font-size: 22px; }
+.nav { display: flex; flex-direction: column; gap: 4px; flex: 1; overflow-y: auto; }
+.nav__link { display: flex; align-items: center; gap: 12px; width: 100%; padding: 10px 12px; border: 0; border-radius: 10px; background: none; color: inherit; text-decoration: none; cursor: pointer; text-align: start; }
+.nav__link:hover { background: rgba(255,255,255,.07); }
+/* لینک صفحه‌ی فعلی در منو با پس‌زمینه‌ی طلایی مشخص می‌شود. */
+.nav__link[aria-current="page"] { background: linear-gradient(90deg, rgba(212,175,55,.22), rgba(212,175,55,.06)); color: var(--gold-light); box-shadow: inset -3px 0 0 var(--gold); }
+.nav__link svg { width: 20px; height: 20px; flex: none; fill: none; stroke: currentColor; stroke-width: 1.7; stroke-linecap: round; stroke-linejoin: round; }
+.sidebar__foot { border-top: 1px solid rgba(255,255,255,.1); padding-top: 10px; margin-top: 10px; }
+
+/* ناحیه‌ی اصلی؛ min-width:0 از سرریزشدن جدول‌های عریض جلوگیری می‌کند. */
+.main { min-width: 0; display: flex; flex-direction: column; }
+.topbar { display: flex; align-items: center; gap: 12px; padding: 14px clamp(16px, 3vw, 32px); background: var(--card); border-bottom: 1px solid var(--line); position: sticky; top: 0; z-index: 5; }
+.topbar h1 { font-size: 20px; flex: 1; }
+.menu-btn { display: none; }
+.icon-btn { width: 40px; height: 40px; border: 1px solid var(--line); background: var(--card); border-radius: 10px; cursor: pointer; font-size: 20px; }
+.view { padding: clamp(16px, 3vw, 32px); outline: none; }
+/* پس‌زمینه‌ی تیره‌ی منوی موبایل */
+.scrim { position: fixed; inset: 0; background: rgba(10,16,32,.55); z-index: 19; }
+
+/* نشان‌ها (badge) برای وضعیت‌ها: سبز تأیید، قرمز رد، زرد در انتظار */
+.badge { font-size: 12px; padding: 2px 10px; border-radius: 99px; background: #eef1f8; color: var(--navy-mid); white-space: nowrap; }
+.badge--demo { background: #fff4d6; color: var(--gold-dark); }
+.badge--ok { background: #e3f5ec; color: var(--ok); }
+.badge--bad { background: #fbe7e4; color: var(--bad); }
+.badge--warn { background: #fff1d9; color: var(--warn); }
+.demo-note { background: #fff8e1; color: #6b4e08; padding: 9px clamp(16px, 3vw, 32px); font-size: 13px; border-bottom: 1px solid #f0e2ac; }
+.link-btn { background: none; border: 0; color: var(--navy-mid); text-decoration: underline; cursor: pointer; padding: 0 6px; }
+
+/* کارت‌ها و شاخص‌های عددی */
+/* ── cards, kpis ── */
+.card { background: var(--card); border: 1px solid var(--line); border-radius: var(--radius); padding: 18px; }
+.card h2 { font-size: 16px; margin-bottom: 14px; }
+.grid { display: grid; gap: 16px; }
+.kpis { grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); margin-bottom: 16px; }
+.kpi { position: relative; overflow: hidden; }
+.kpi::after { content: ""; position: absolute; inset-inline-start: 0; top: 0; bottom: 0; width: 4px; background: var(--gold); }
+.kpi__label { color: var(--muted); font-size: 13px; }
+.kpi__value { font-size: 30px; font-weight: 800; color: var(--navy-dark); line-height: 1.3; }
+.kpi__sub { font-size: 12px; color: var(--muted); }
+.cols-2 { grid-template-columns: repeat(auto-fit, minmax(min(100%, 380px), 1fr)); }
+
+/* نوار ابزار، دکمه‌ها و فرم‌ها */
+/* ── toolbar, buttons, forms ── */
+.toolbar { display: flex; flex-wrap: wrap; gap: 10px; align-items: center; margin-bottom: 14px; }
+.toolbar .spacer { flex: 1; }
+.btn { display: inline-flex; align-items: center; justify-content: center; gap: 6px; padding: 8px 16px; border-radius: 10px; border: 1px solid var(--line); background: var(--card); cursor: pointer; white-space: nowrap; }
+.btn:hover { border-color: var(--navy-light); }
+.btn--primary { background: linear-gradient(145deg, var(--navy-mid), var(--navy-dark)); border-color: var(--navy-dark); color: #fff; }
+.btn--primary:hover { filter: brightness(1.15); }
+.btn--danger { color: var(--bad); border-color: #efc4be; }
+.btn--sm { padding: 3px 10px; font-size: 13px; }
+.btn[disabled] { opacity: .55; cursor: not-allowed; }
+input, select, textarea { width: 100%; padding: 8px 12px; border: 1px solid var(--line); border-radius: 10px; background: #fff; }
+input[type="checkbox"] { width: 18px; height: 18px; accent-color: var(--navy-mid); }
+.search { max-width: 280px; }
+label { display: block; font-size: 13px; color: var(--muted); }
+label > input, label > select, label > textarea { margin-top: 4px; color: var(--text); font-size: 15px; }
+.form-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 14px; }
+.form-grid .full { grid-column: 1 / -1; }
+label.check { display: flex; align-items: center; gap: 8px; color: var(--text); }
+.form-error { color: var(--bad); min-height: 1.5em; margin: 8px 0 0; font-size: 13px; }
+.tabs { display: flex; gap: 6px; margin-bottom: 14px; border-bottom: 1px solid var(--line); }
+.tab { padding: 8px 16px; border: 0; background: none; cursor: pointer; border-bottom: 3px solid transparent; color: var(--muted); }
+.tab[aria-selected="true"] { color: var(--navy-dark); border-color: var(--gold); font-weight: 700; }
+
+/* جدول‌ها؛ در صفحه‌ی کوچک افقی اسکرول می‌شوند (min-width) */
+/* ── table ── */
+.table-wrap { overflow-x: auto; background: var(--card); border: 1px solid var(--line); border-radius: var(--radius); }
+table { width: 100%; border-collapse: collapse; min-width: 640px; }
+th, td { padding: 11px 14px; text-align: start; border-bottom: 1px solid var(--line); vertical-align: middle; }
+th { background: #f8f9fc; font-size: 13px; color: var(--muted); font-weight: 600; white-space: nowrap; }
+tr:last-child td { border-bottom: 0; }
+tbody tr:hover { background: #fafbfe; }
+td.actions { white-space: nowrap; text-align: end; }
+.empty { padding: 36px 16px; text-align: center; color: var(--muted); }
+.num { font-variant-numeric: tabular-nums; }
+
+/* نوار پیشرفت و نمودار ستونی ساده (بدون کتابخانه) */
+/* ── bars & charts ── */
+.bar { height: 8px; border-radius: 99px; background: #e9ecf4; overflow: hidden; min-width: 70px; }
+.bar > i { display: block; height: 100%; border-radius: 99px; background: linear-gradient(90deg, var(--navy-light), var(--navy-mid)); }
+.bar.gold > i { background: linear-gradient(90deg, var(--gold-light), var(--gold)); }
+.bar.full > i { background: var(--bad); }
+.row-bars { display: grid; gap: 14px; }
+.row-bars .top { display: flex; justify-content: space-between; gap: 8px; font-size: 14px; margin-bottom: 4px; }
+.cols-chart { display: flex; align-items: flex-end; gap: 6px; height: 150px; padding-top: 10px; }
+.cols-chart .col { flex: 1; display: flex; flex-direction: column; justify-content: flex-end; align-items: center; height: 100%; gap: 4px; min-width: 0; }
+.cols-chart .col i { display: block; width: 100%; max-width: 26px; border-radius: 6px 6px 0 0; background: linear-gradient(180deg, var(--gold), var(--gold-dark)); }
+.cols-chart .col i.none { background: var(--line); }
+.cols-chart small { font-size: 10px; color: var(--muted); }
+
+/* انتخاب وضعیت حضور (حاضر/تأخیر/غایب): رادیوها پنهان‌اند و برچسب‌ها مثل دکمه‌ی قطعه‌ای دیده می‌شوند. */
+/* ── attendance ── */
+.seg { display: inline-flex; border: 1px solid var(--line); border-radius: 10px; overflow: hidden; }
+.seg input { position: absolute; opacity: 0; pointer-events: none; width: 1px; }
+.seg label { padding: 4px 14px; cursor: pointer; color: var(--text); font-size: 13px; border-inline-start: 1px solid var(--line); }
+.seg label:first-of-type { border-inline-start: 0; }
+.seg input:checked + label.p { background: #e3f5ec; color: var(--ok); font-weight: 700; }
+.seg input:checked + label.a { background: #fbe7e4; color: var(--bad); font-weight: 700; }
+.seg input:checked + label.l { background: #fff1d9; color: var(--warn); font-weight: 700; }
+.seg input:focus-visible + label { outline: 3px solid var(--gold); outline-offset: -3px; }
+
+/* پنجره‌ی گفتگو، پیام موقت و صفحه‌ی ورود */
+/* ── dialog, toast, gate ── */
+.dlg { border: 0; border-radius: var(--radius); padding: 0; width: min(560px, calc(100vw - 24px)); max-height: calc(100vh - 24px); box-shadow: 0 24px 70px rgba(10,16,32,.35); color: var(--text); }
+.dlg::backdrop { background: rgba(10,16,32,.55); }
+.dlg__head { padding: 16px 20px; border-bottom: 1px solid var(--line); display: flex; justify-content: space-between; align-items: center; }
+.dlg__body { padding: 18px 20px; overflow-y: auto; max-height: 60vh; }
+.dlg__foot { padding: 14px 20px; border-top: 1px solid var(--line); display: flex; gap: 10px; justify-content: flex-start; }
+.pick-list { display: grid; gap: 4px; max-height: 320px; overflow-y: auto; border: 1px solid var(--line); border-radius: 10px; padding: 6px; margin-top: 8px; }
+.pick-list label { padding: 5px 8px; border-radius: 8px; }
+.pick-list label:hover { background: #f4f6fb; }
+.toast { position: fixed; bottom: 22px; left: 50%; transform: translate(-50%, 30px); opacity: 0; pointer-events: none; background: var(--navy-dark); color: #fff; padding: 10px 20px; border-radius: 12px; transition: .25s; z-index: 50; max-width: calc(100vw - 32px); }
+.toast.show { opacity: 1; transform: translate(-50%, 0); }
+.toast.error { background: var(--bad); }
+.gate { min-height: 100vh; display: grid; place-items: center; padding: 20px; background: radial-gradient(circle at 20% 10%, var(--navy-mid), var(--navy-dark)); }
+.gate__card { background: var(--card); width: min(400px, 100%); padding: 28px; border-radius: 18px; display: grid; gap: 14px; }
+
+/* واکنش‌گرایی: در نمایشگر کوچک منو به‌صورت کشویی از سمت راست (RTL) باز می‌شود. */
+/* ── responsive ── */
+@media (max-width: 900px) {
+  .shell { grid-template-columns: 1fr; }
+  .sidebar { position: fixed; inset-block: 0; inset-inline-start: 0; width: min(280px, 84vw); z-index: 20; transform: translateX(100%); transition: transform .25s; }
+  html[dir="rtl"] .sidebar { right: 0; left: auto; }
+  .sidebar.open { transform: none; }
+  .menu-btn { display: inline-grid; place-items: center; }
+  #whoami { display: none; }
+}
+@media (max-width: 560px) {
+  .form-grid { grid-template-columns: 1fr; }
+  .search { max-width: none; flex: 1 1 100%; }
+  .kpi__value { font-size: 26px; }
+}
+/* احترام به تنظیم «کاهش حرکت» سیستم‌عامل: انیمیشن‌ها حذف می‌شوند. */
+@media (prefers-reduced-motion: reduce) { * { transition: none !important; } }

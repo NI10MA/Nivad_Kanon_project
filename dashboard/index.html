@@ -1,0 +1,68 @@
+<!doctype html>
+<html lang="fa" dir="rtl">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>پنل مدیریت کانون دانش‌آموزی</title>
+  <!-- جلوگیری از ایندکس‌شدن پنل مدیریت در موتورهای جست‌وجو -->
+  <meta name="robots" content="noindex,nofollow">
+  <!-- استایل‌های داشبورد -->
+  <link rel="stylesheet" href="dashboard.css">
+</head>
+<body>
+
+  <!-- Login gate (shown only when the real API says you are not signed in) -->
+  <!-- فرم ورود مدیر؛ فقط وقتی نمایش داده می‌شود که کاربر وارد نشده باشد. نمایش/پنهان‌شدن آن در app.js کنترل می‌شود. -->
+  <section id="loginGate" class="gate" hidden>
+    <form id="gateForm" class="gate__card" autocomplete="on">
+      <h1>ورود مدیر</h1>
+      <p class="muted">برای دسترسی به داشبورد با حساب مدیر وارد شوید.</p>
+      <label>نام کاربری<input id="gateUser" name="username" autocomplete="username" dir="ltr" required></label>
+      <label>رمز عبور<input id="gatePass" name="password" type="password" autocomplete="current-password" dir="ltr" required></label>
+      <p id="gateMsg" class="form-error" role="alert"></p>
+      <button class="btn btn--primary" type="submit">ورود</button>
+    </form>
+  </section>
+
+  <!-- پوسته‌ی اصلی پنل (منوی کناری + محتوا)؛ بعد از ورود مدیر نمایش داده می‌شود. -->
+  <div id="shell" class="shell" hidden>
+    <!-- منوی کناری؛ لینک‌های صفحه‌ها توسط app.js داخل #nav ساخته می‌شود. -->
+    <aside id="sidebar" class="sidebar" aria-label="منوی اصلی">
+      <div class="brand"><span class="brand__mark">ک</span><span>پنل مدیریت<br>کانون دانش‌آموزی</span></div>
+      <nav id="nav" class="nav"></nav>
+      <div class="sidebar__foot">
+        <a class="nav__link" href="../index.html" target="_blank" rel="noopener">مشاهده سایت</a>
+        <button id="logoutBtn" class="nav__link" type="button">خروج</button>
+      </div>
+    </aside>
+    <!-- پس‌زمینه‌ی تیره‌ی پشت منو در موبایل (با کلیک روی آن منو بسته می‌شود) -->
+    <div id="scrim" class="scrim" hidden></div>
+
+    <!-- بخش اصلی: نوار بالا و محتوای هر صفحه -->
+    <div class="main">
+      <header class="topbar">
+        <button id="menuBtn" class="icon-btn menu-btn" type="button" aria-label="باز کردن منو">☰</button>
+        <h1 id="pageTitle">نمای کلی</h1>
+        <!-- نشان و توضیح حالت نمایشی (دمو)؛ فقط در حالت بدون سرور نمایش داده می‌شود. -->
+        <span id="modeBadge" class="badge badge--demo" hidden>حالت نمایشی</span>
+        <span id="whoami" class="muted"></span>
+      </header>
+      <div id="demoNote" class="demo-note" hidden>
+        سرور متصل نیست؛ داشبورد با داده‌های نمونه کار می‌کند و تغییرات فقط در همین مرورگر ذخیره می‌شود.
+        <button id="resetDemo" class="link-btn" type="button">بازنشانی داده‌های نمونه</button>
+      </div>
+      <!-- محل نمایش محتوای صفحه‌ی فعلی؛ توسط app.js پر می‌شود. -->
+      <main id="view" class="view" tabindex="-1"></main>
+    </div>
+  </div>
+
+  <!-- پنجره‌ی گفتگوی مشترک برای فرم‌ها و تأییدها -->
+  <dialog id="dlg" class="dlg"></dialog>
+  <!-- پیام کوتاه موقت (toast)؛ aria-live برای اعلام به صفحه‌خوان‌ها -->
+  <div id="toast" class="toast" role="status" aria-live="polite"></div>
+
+  <!-- ترتیب مهم است: ابتدا لایه‌ی داده (api.js) و سپس منطق رابط (app.js) -->
+  <script src="api.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>

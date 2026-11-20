@@ -1,0 +1,424 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>پنل کاربری | سازمان دانش‌آموزی استان همدان</title>
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    <!-- Dashboard CSS -->
+    <link rel="stylesheet" href="dashboard-login.css">
+</head>
+
+<body>
+
+    <div class="dashboard">
+
+        <!-- SIDEBAR -->
+        <aside class="sidebar">
+
+            <div class="sidebar-logo">
+                <i class="fa-solid fa-book-open"></i>
+                <span>کانون مهدیه</span>
+            </div>
+
+            <div class="user-profile">
+
+                <div class="user-avatar">
+                    <i class="fa-solid fa-user"></i>
+                </div>
+
+                <h3 id="sidebarUserName">کاربر کانون</h3>
+                <p id="sidebarUserPhone"></p>
+
+            </div>
+
+            <nav class="sidebar-menu">
+
+                <a href="#top" class="active" data-nav-link>
+                    <i class="fa-solid fa-border-all"></i>
+                    داشبورد
+                </a>
+
+                <a href="#myCoursesSection" data-nav-link>
+                    <i class="fa-solid fa-graduation-cap"></i>
+                    دوره‌های من
+                </a>
+
+                <a href="#attendance" data-nav-link>
+                    <i class="fa-solid fa-calendar-check"></i>
+                    حضور و غیاب
+                </a>
+
+                <a href="course-register.html">
+                    <i class="fa-solid fa-user-plus"></i>
+                    فرم جامع ثبت‌نام دوره
+                </a>
+
+                <a href="accommodation.html">
+                    <i class="fa-solid fa-bed"></i>
+                    رزرو خوابگاه
+                </a>
+
+                <a href="hall-booking.html">
+                    <i class="fa-solid fa-building-columns"></i>
+                    رزرو سالن
+                </a>
+
+                <a href="dashboard/index.html" id="adminPanelShortcut" hidden>
+                    <i class="fa-solid fa-gauge-high"></i>
+                    ورود به پنل مدیریت (ادمین)
+                </a>
+
+                <a href="index.html">
+                    <i class="fa-solid fa-house"></i>
+                    صفحه اصلی سایت
+                </a>
+
+                <a href="Login.html?mode=login" id="logoutLink">
+                    <i class="fa-solid fa-right-from-bracket"></i>
+                    <span id="logoutLinkText">خروج از حساب</span>
+                </a>
+
+            </nav>
+
+        </aside>
+
+
+        <!-- MAIN CONTENT -->
+        <main class="main-content" id="top">
+
+            <!-- TOPBAR -->
+            <header class="topbar">
+
+                <div class="topbar-title">
+                    <h2>داشبورد دانش‌آموزی</h2>
+                    <p id="topbarSubtitle">به پنل کاربری خود خوش آمدید</p>
+                </div>
+
+                <div class="topbar-actions">
+                    <a href="index.html" class="topbar-link-btn" title="بازگشت به صفحه اصلی سایت" aria-label="صفحه اصلی سایت">
+                        <i class="fa-solid fa-house"></i>
+                    </a>
+                    <button type="button" id="refreshDashboardBtn" title="به‌روزرسانی اطلاعات" aria-label="به‌روزرسانی اطلاعات">
+                        <i class="fa-solid fa-rotate-right"></i>
+                    </button>
+                </div>
+
+            </header>
+
+
+            <!-- WELCOME BANNER -->
+            <section class="welcome-banner">
+
+                <div class="welcome-text">
+
+                    <h1 id="welcomeUserTitle">سلام، کاربر عزیز!</h1>
+
+                    <span id="welcomeUserSubtitle">
+                        <i class="fa-solid fa-calendar-days"></i>
+                        وضعیت ثبت‌نام دوره‌ها و تقویم حضور و غیاب شما به صورت زنده از سامانه کانون دریافت می‌شود
+                    </span>
+
+                </div>
+
+            </section>
+
+
+            <!-- STATISTICS -->
+            <section class="statistics">
+
+                <div class="stat-card">
+                    <div class="stat-icon">
+                        <i class="fa-solid fa-book-open"></i>
+                    </div>
+                    <div>
+                        <h3 id="statActiveCourses">۰</h3>
+                        <p>دوره فعال ثبت‌نام‌شده</p>
+                    </div>
+                </div>
+
+                <div class="stat-card">
+                    <div class="stat-icon">
+                        <i class="fa-solid fa-calendar-check"></i>
+                    </div>
+                    <div>
+                        <h3 id="statPresentSessions">۰</h3>
+                        <p>جلسه حضور در کلاس</p>
+                    </div>
+                </div>
+
+                <div class="stat-card">
+                    <div class="stat-icon">
+                        <i class="fa-solid fa-calendar-xmark"></i>
+                    </div>
+                    <div>
+                        <h3 id="statAbsentSessions">۰</h3>
+                        <p>جلسه غیبت</p>
+                    </div>
+                </div>
+
+                <div class="stat-card attendance-stat-card">
+                    <div class="attendance-circle" id="attendanceCircle" style="--progress: 0%;">
+                        <div class="attendance-circle-inner">
+                            <strong id="statAttendanceRate">۰٪</strong>
+                            <span>میزان حضور</span>
+                        </div>
+                    </div>
+                </div>
+
+            </section>
+
+
+            <!-- DASHBOARD CONTENT -->
+            <section class="dashboard-content">
+                
+            <!-- MY COURSES -->
+            <div class="content-card courses-card" id="myCoursesSection">
+
+                <!-- Card Header -->
+                <div class="card-header">
+                    <h2>
+                        <i class="fa-solid fa-graduation-cap"></i>
+                        دوره‌های من
+                    </h2>
+                    <a href="courses.html">مشاهده همه دوره‌ها ←</a>
+                </div>
+
+                <!-- Course List -->
+                <div class="course-list" style="padding: 18px;">
+
+                    <!-- Educational Courses -->
+                    <div class="my-course my-course--educational">
+
+                        <div class="course-image">
+                            <i class="fa-solid fa-graduation-cap"></i>
+                        </div>
+
+                        <div class="course-info">
+                            <div>
+                                <h3>دوره‌های آموزشی فعال</h3>
+                                <div class="enrolled-tags" id="enrolledEducationalList">
+                                    <span class="enrolled-empty">در حال بارگذاری دوره‌های آموزشی…</span>
+                                </div>
+                            </div>
+
+                            <button
+                                class="course-open-btn"
+                                type="button"
+                                data-course-type="educational"
+                            >
+                                <i class="fa-solid fa-plus"></i>
+                                ثبت‌نام دوره جدید
+                            </button>
+
+                        </div>
+
+                    </div>
+
+
+                    <!-- Sports Courses -->
+                    <div class="my-course my-course--sports">
+
+                        <div class="course-image">
+                            <i class="fa-solid fa-dumbbell"></i>
+                        </div>
+
+                        <div class="course-info">
+                            <div>
+                                <h3>دوره‌های ورزشی فعال</h3>
+                                <div class="enrolled-tags" id="enrolledSportsList">
+                                    <span class="enrolled-empty">در حال بارگذاری دوره‌های ورزشی…</span>
+                                </div>
+                            </div>
+
+                            <button
+                                class="course-open-btn"
+                                type="button"
+                                data-course-type="sports"
+                            >
+                                <i class="fa-solid fa-plus"></i>
+                                ثبت‌نام دوره جدید
+                            </button>
+                            
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- NEW COURSE MODAL -->
+            <div
+                class="course-modal"
+                id="courseModal"
+                aria-hidden="true"
+            >
+
+                <div
+                    class="course-modal__panel"
+                    role="dialog"
+                    aria-modal="true"
+                    aria-labelledby="courseModalTitle"
+                >
+
+                    <!-- Modal Header -->
+                    <div class="course-modal__header">
+
+                        <div class="course-modal__icon">
+                            <i class="fa-solid fa-book-open"></i>
+                        </div>
+
+                        <div class="course-modal__heading">
+
+                            <span id="courseModalCategory">
+                                دوره‌های آموزشی
+                            </span>
+
+                            <h2 id="courseModalTitle">
+                                ثبت‌نام دوره‌های جدید
+                            </h2>
+
+                        </div>
+
+                        <button
+                            class="course-modal__close"
+                            id="courseModalClose"
+                            type="button"
+                            aria-label="بستن پنجره"
+                        >
+                            <i class="fa-solid fa-xmark"></i>
+                        </button>
+
+                    </div>
+
+                    <!-- MODAL CONTENT -->
+                    <div class="course-modal__content" id="courseModalContent">
+
+                        <!-- Course Options -->
+                        <div
+                            class="course-selection-list"
+                            id="courseSelectionList"
+                            aria-label="فهرست دوره‌ها"
+                        ></div>
+
+                        <!-- Selection Footer -->
+                        <div class="course-selection-footer">
+
+                            <div class="course-selection-summary">
+                                <span id="selectedCourseCount">۰</span>
+                                <span>دوره انتخاب شده</span>
+                            </div>
+
+                            <button
+                                class="course-payment-btn"
+                                id="courseModalSubmitBtn"
+                                type="button"
+                            >
+                                <i class="fa-solid fa-check-double"></i>
+                                ثبت نهایی در دوره‌های انتخابی
+                            </button>
+
+                            <p class="course-payment-note" id="courseModalFeedback">
+                                پس از ثبت نهایی، دوره‌های انتخابی به لیست دوره‌های شما و لیست حضور و غیاب کلاس در پنل مدیریت اضافه می‌شوند.
+                            </p>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+                <!-- ATTENDANCE -->
+                
+                <section class="content-card attendance-card" id="attendance">
+
+                    <!-- Card Header -->
+                    <div class="card-header">
+                        <div>
+                            <h3>
+                                <i class="fa-solid fa-calendar-days"></i>
+                             تقویم حضور و غیاب
+                            </h3>
+                            <p>وضعیت حضور شما در جلسات ثبت‌شده توسط مربی و پنل مدیریت</p>
+                        </div>
+
+                        <i class="fa-solid fa-calendar-check"></i>
+                    </div>
+
+                    <!-- Calendar -->
+                    <div class="calendar">
+
+                        <!-- Calendar Header -->
+                        <div class="calendar-header">
+
+                            <button id="prevMonth" type="button" aria-label="ماه قبل">
+                                <i class="fa-solid fa-chevron-right"></i>
+                            </button>
+
+                            <h3 id="monthTitle">آبان ۱۴۰۵</h3>
+
+                            <button id="nextMonth" type="button" aria-label="ماه بعد">
+                                <i class="fa-solid fa-chevron-left"></i>
+                            </button>
+
+                        </div>
+
+                        <!-- Weekdays -->
+                        <div class="calendar-weekdays">
+                            <span>شنبه</span>
+                            <span>یکشنبه</span>
+                            <span>دوشنبه</span>
+                            <span>سه‌شنبه</span>
+                            <span>چهارشنبه</span>
+                            <span>پنجشنبه</span>
+                            <span>جمعه</span>
+                        </div>
+
+                        <!-- Calendar Days -->
+                        <div class="calendar-days" id="calendarDays">
+                        </div>
+
+                        <!-- Calendar Legend -->
+                        <div class="calendar-legend">
+
+                            <span>
+                                <i class="attendance-dot present"></i>
+                                حاضر
+                            </span>
+
+                            <span>
+                                <i class="attendance-dot late"></i>
+                                تأخیر
+                            </span>
+
+                            <span>
+                                <i class="attendance-dot absent"></i>
+                                غایب
+                            </span>
+
+                        </div>
+
+                    </div>
+
+                </section>
+
+            </section>
+
+        </main>
+
+    </div>
+
+
+    <!-- JAVASCRIPT -->
+    <script src="dashboard-login.js"></script>
+
+</body>
+</html>

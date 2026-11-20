@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>دوره‌های آموزشی و ورزشی | سازمان دانش‌آموزی استان همدان</title>
+  <meta name="description" content="فهرست دوره‌های آموزشی و ورزشی فعال سازمان دانش‌آموزی استان همدان">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/public-pages.css">
+  <script src="js/public-pages.js" defer></script>
+</head>
+<body class="public-page">
+
+  <header class="site-header page-header" id="siteHeader">
+    <a class="brand" href="index.html" aria-label="سازمان دانش‌آموزی استان همدان، صفحهٔ اصلی">
+      <svg class="brand__mark" viewBox="0 0 48 48" aria-hidden="true">
+        <rect width="48" height="48" rx="13" fill="#d4af37"/>
+        <path d="M10 33h28M14 33V20l10-7 10 7v13M20 33v-8h8v8" fill="none" stroke="#0B0F0D" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/>
+      </svg>
+      <span class="brand__text">
+        <strong>دانش‌آموزی همدان</strong>
+        <small>سازمان استان</small>
+      </span>
+    </a>
+
+    <div class="footer-brand">
+      <a class="login-button" id="headerAuthLink" href="Login.html"><i class="fa-regular fa-user"></i><span>ورود / ثبت‌ نام</span></a>
+    </div>
+    <button class="burger" id="burger" type="button" aria-expanded="false" aria-controls="mainNav">
+      <span class="burger__label">منو</span>
+      <span class="burger__bars" aria-hidden="true"><i></i><i></i></span>
+    </button>
+
+    <nav class="nav" id="mainNav" aria-label="منوی اصلی">
+      <ul>
+        <li><a href="index.html">خانه</a></li>
+        <li><a href="courses.html" class="is-current" aria-current="page">دوره‌ها</a></li>
+        <li><a href="course-register.html">ثبت‌نام دوره</a></li>
+        <li><a href="hall-booking.html">رزرو سالن</a></li>
+        <li><a href="accommodation.html">رزرو خوابگاه</a></li>
+        <li><a href="index.html#mentors">مربیان</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main class="public-main">
+    <section class="public-hero">
+      <span class="public-kicker">مسیر رشد و یادگیری</span>
+      <h1>دوره‌های آموزشی و ورزشی</h1>
+      <p>دوره‌های فعال تعریف‌شده در پنل مدیریت کانون را مشاهده کنید، جزئیات هر دوره را ببینید و برای ثبت‌نام اقدام نمایید.</p>
+    </section>
+
+    <section class="public-content">
+      <div class="public-toolbar">
+        <div class="public-filters" role="group" aria-label="فیلتر دوره‌ها">
+          <button class="filter-chip active" type="button" data-filter="all">همه دوره‌ها</button>
+          <button class="filter-chip" type="button" data-filter="educational">آموزشی</button>
+          <button class="filter-chip" type="button" data-filter="sports">ورزشی</button>
+          <button class="filter-chip" type="button" data-filter="in_person">حضوری</button>
+          <button class="filter-chip" type="button" data-filter="online">آنلاین</button>
+        </div>
+        <span class="public-count" id="courseCount">در حال دریافت دوره‌ها…</span>
+      </div>
+
+      <div class="public-course-grid" id="publicCourses" aria-live="polite">
+        <div class="public-loading">در حال بارگذاری دوره‌ها از سرور…</div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer" id="Footer">
+    <div class="footer-socials">
+      <a href="https://t.me" target="_blank" rel="noopener" aria-label="تلگرام" title="تلگرام">
+        <svg viewBox="0 0 24 24"><path d="M21.5 3.5 18.2 20c-.25 1.16-.92 1.45-1.86.9l-5.15-3.8-2.49 2.4c-.28.28-.52.52-1.06.52l.37-5.24 9.54-8.62c.41-.37-.09-.57-.63-.2L5.13 13.4.04 11.81c-1.1-.34-1.12-1.1.23-1.61L20.16 2.5c.92-.34 1.72.22 1.34 1z"/></svg>
+      </a>
+      <a href="https://instagram.com" target="_blank" rel="noopener" aria-label="اینستاگرام" title="اینستاگرام">
+        <svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="18" cy="6" r="1" class="icon-fill"/></svg>
+      </a>
+      <a href="https://wa.me" target="_blank" rel="noopener" aria-label="واتساپ" title="واتساپ">
+        <svg viewBox="0 0 24 24"><path d="M20.5 11.7a8.5 8.5 0 0 1-12.6 7.4L3 20.5l1.4-4.7a8.5 8.5 0 1 1 16.1-4.1z"/><path d="M8.5 7.5c-.3 0-.7.1-.9.5-.3.4-1 1.1-1 2.6s1 3 1.2 3.2c.2.2 2 3.1 5 4.2 2.5 1 3 .8 3.5.7.5-.1 1.7-.7 2-1.4.2-.7.2-1.2.1-1.4-.1-.1-.3-.2-.7-.4l-2-1c-.3-.1-.5-.2-.7.2l-.9 1.1c-.2.2-.4.3-.7.1a8 8 0 0 1-2.4-1.5 9 9 0 0 1-1.6-2c-.2-.3 0-.5.1-.6l.6-.7c.2-.2.2-.4.3-.6.1-.2 0-.4 0-.6l-.9-2.1c-.2-.5-.4-.4-.7-.4z"/></svg>
+      </a>
+      <a href="https://aparat.com" target="_blank" rel="noopener" aria-label="آپارات" title="آپارات"><span class="aparat-icon">A</span></a>
+    </div>
+
+    <nav class="footer-nav" aria-label="منوی فوتر">
+      <a href="index.html">خانه</a>
+      <a href="courses.html">دوره‌ها</a>
+      <a href="course-register.html">ثبت‌نام دوره</a>
+      <a href="hall-booking.html">رزرو سالن</a>
+      <a href="accommodation.html">رزرو خوابگاه</a>
+      <a href="dashboard/index.html">پنل مدیریت</a>
+    </nav>
+
+    <div class="footer-brand">
+      <div class="footer-brand-text">
+        <h3>کانون آموزش و پرورش</h3>
+        <p>با هم برای آینده بهتر</p>
+      </div>
+      <div class="footer-logo">
+        <svg viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg">
+          <path class="logo-gold" d="M32 3 C25 10 25 16 32 22 C39 16 39 10 32 3Z"/>
+          <path class="logo-white" d="M32 13 C27 18 28 23 32 27 C36 23 37 18 32 13Z"/>
+          <path class="logo-white" d="M35 27 C43 22 51 23 59 29 L59 55 C51 50 43 50 35 55Z"/>
+          <path class="logo-white" d="M29 27 C21 22 13 23 5 29 L5 55 C13 50 21 50 29 55Z"/>
+          <path d="M32 28 V57" fill="none" stroke="#D6AD28" stroke-width="2.5" stroke-linecap="round"/>
+        </svg>
+      </div>
+    </div>
+  </footer>
+
+</body>
+</html>
