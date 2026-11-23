@@ -572,19 +572,34 @@ button { font: inherit; color: inherit; }
 
 /* Grid */
 
-/* ==============================
-   Category Grid - Centered
-============================== */
+/* =====================================
+   CATEGORY GRID - PREMIUM FRAME
+===================================== */
 
 .category-grid {
+    position: relative;
     display: grid;
     grid-template-columns: repeat(
         auto-fit,
-        minmax(min(100%, 540px), 1fr)
+        minmax(min(100%, 460px), 1fr)
     );
-    gap: clamp(45px, 5vw, 60px);
-    width: min(100%, 580px);
+    gap: clamp(30px, 4vw, 55px);
+    width: min(100%, 1280px);
     margin-inline: auto;
+    padding: clamp(20px, 3vw, 38px);
+    box-sizing: border-box;
+    background: linear-gradient(
+        145deg,
+        rgba(0, 51, 105, 0.95),
+        rgba(237, 243, 251, 0.92),
+        rgba(1, 37, 116, 0.75)
+    );
+    border: 1px solid rgba(36, 59, 100, 0.16);
+    border-radius: 26px;
+    box-shadow:
+        0 12px 35px rgba(0, 0, 0, 0.741),
+        0 2px 8px rgba(1, 40, 107, 0.04),
+        inset 0 1px 0 rgba(0, 43, 104, 0.155);
     align-items: stretch;
 }
 
@@ -1894,13 +1909,12 @@ button { font: inherit; color: inherit; }
   position: relative;
   background: linear-gradient(
     120deg,
-    #101b35 0%,
+    #facb5d 0%,
     #243b64 25%,
     #526b94 50%,
     #243b64 75%,
-    #101b35 100%
+    #facb5d 100%
   ); 
-  color: #D6AD28;
   overflow: hidden;
   direction: rtl;
   font-family: inherit;
@@ -1911,7 +1925,7 @@ button { font: inherit; color: inherit; }
 .wave-footer-wrap {
   position: relative;
   width: 100%;
-  height: 120px;
+  height: 80px;
   overflow: hidden;
   line-height: 0;
   direction: ltr;
@@ -1973,13 +1987,23 @@ button { font: inherit; color: inherit; }
 }
 
 .footer-brand-text h3 {
-  color: #E7BD55;
+  background: linear-gradient(
+    120deg,
+    #8d6816 0%,
+    #d4af37 25%,
+    #f5d76e 50%,
+    #d4af37 75%,
+    #8d6816 100%
+    );
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
   font-size: 21px;
   margin: 0 0 8px;
 }
 
 .footer-brand-text p {
-  color: #C5CAD5;
+  color: #ffffff;
   font-size: 14px;
   margin: 0;
 }
@@ -2013,70 +2037,72 @@ button { font: inherit; color: inherit; }
 
 .footer-nav a {
   text-decoration: none;
-  color: #D6AD28;
-  font-size: 14px;
+  color: #fff;
+  font-size: 17px;
   transition: .3s ease;
 }
 
 .footer-nav a:hover {
-  color: #FFF0B0;
+  background: linear-gradient(
+    120deg,
+    #8d6816 0%,
+    #d4af37 25%,
+    #f5d76e 50%,
+    #d4af37 75%,
+    #8d6816 100%
+    );
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
   transform: translateY(-3px);
+  font-size: 19px;
 }
 
-/* شبکه های اجتماعی */
+/* Footer Social Icons */
 
 .footer-socials {
-  display: flex;
-  align-items: center;
-  gap: 15px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 25px;
 }
 
 .footer-socials a {
-  width: 43px;
-  height: 43px;
-  border: 1px solid rgba(214,173,40,.45);
-  background: rgba(255,255,255,.04);
-  border-radius: 12px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  transition: .3s ease;
-}
-
-.footer-socials svg {
-  width: 20px;
-  height: 20px;
-  fill: #D6AD28;
-  stroke: #D6AD28;
+    width: 53px;
+    height: 53px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #ffffff;
+    background: linear-gradient(
+    120deg,
+    #101b35 0%,
+    #243b64 25%,
+    #526b94 50%,
+    #243b64 75%,
+    #101b35 100%
+  );
+    border: 1px solid #fad346;
+    border-radius: 50%;
+    font-size: 30px;
+    text-decoration: none;
+    transition: 0.3s ease;
 }
 
 .footer-socials a:hover {
-  background: #D6AD28;
-  border-color: #D6AD28;
-  transform: translateY(-4px);
-  box-shadow: 0 5px 18px rgba(214,173,40,.25);
+    color: #050914;
+    background: linear-gradient(
+    120deg,
+    #8d6816 0%,
+    #d4af37 25%,
+    #f5d76e 50%,
+    #d4af37 75%,
+    #8d6816 100%
+    );
+    transform: translateY(-5px);
+    box-shadow: 0 0 15px #f9c701f9;
 }
 
-.footer-socials a:hover svg {
-  fill: #10264A;
-  stroke: #10264A;
-}
-
-.footer-socials .icon-fill {
-  fill: #10264A;
-  stroke: none;
-}
-
-.aparat-icon {
-  font-size: 21px;
-  font-weight: bold;
-  color: #D6AD28;
-  transition: .3s;
-}
-
-.footer-socials a:hover .aparat-icon {
-  color: #10264A;
-}
 
 /* بخش حقوقی */
 
@@ -2097,8 +2123,46 @@ button { font: inherit; color: inherit; }
 }
 
 .footer-credit span {
-  color: #C2C8D2;
+  background: linear-gradient(
+    135deg,
+    #101b35 0%,
+    #243b64 50%,
+    #101b35 100%
+  );
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  cursor: pointer;
   font-weight: 600;
+}
+
+.footer-credit span:hover {
+  background: linear-gradient(
+    120deg,
+    #8d6816 0%,
+    #d4af37 25%,
+    #f5d76e 50%,
+    #d4af37 75%,
+    #8d6816 100%
+    );
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+.footer-credit a {
+  background: linear-gradient(
+    135deg,
+    #101b35 0%,
+    #243b64 50%,
+    #101b35 100%
+  );
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  text-decoration: underline;
+  font-size: 17px;
+  text-underline-offset: 3px;
 }
 
 /* موبایل */
